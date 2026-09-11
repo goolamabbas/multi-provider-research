@@ -1,0 +1,4 @@
+interface:
+  display_name: "Multi Provider Research"
+  short_description: "Route research through relevant available providers"
+  default_prompt: "Use $multi-provider-research to route this research through only the relevant available providers and X interfaces."
