@@ -12,7 +12,9 @@ The skill covers Octen, Exa Search/Agent/Connect, Perplexity, Parallel, Firecraw
 4. Start a fresh task or reload skills as your application requires.
 5. Connect and test at least one suitable research provider separately.
 
-Install the inner `multi-provider-research` folder containing `SKILL.md`.
+Install the inner `multi-provider-research` folder containing `SKILL.md`. The root routes to provider references as needed; preserve the complete package.
+
+`agents/openai.yaml` supplies optional OpenAI-specific interface metadata. Its invocation syntax is environment-specific; the plain-language example below is the portable entry point.
 
 If another version is already installed, compare or back it up before replacing it.
 
