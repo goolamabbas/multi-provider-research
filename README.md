@@ -34,7 +34,7 @@ The skill supplies instructions. It does not install providers, supply API keys,
 
 ## Guide
 
-[Choosing External Research Tools for AI Agents](https://yusuf-goolamabbas-53.notion.site/Public-Choosing-External-Research-Tools-for-AI-Agents-3d083c2ae3038021af87df733a424ffc) explains the approach and provides copyable prompts.
+[Choosing External Research Tools for AI Agents](https://github.com/goolamabbas/separate-intelligence-and-search/blob/main/docs/README.md) — the detailed companion guide, provider reference, connection guidance, and copyable research prompts.
 
 ## License
 
