@@ -28,13 +28,15 @@ Research question: [YOUR QUESTION]
 
 State any required or excluded providers and whether provider-generated analysis is permitted. Naming a provider requires its contribution; “only” or “exactly” restricts the permitted set.
 
+Firecrawl Alexandria is an optional route to structured provider data. The skill discovers current capabilities when the task benefits from them, checks coverage and published prices, and reuses sufficient search or page evidence instead of adding paid enrichment. Catalog discovery is free; execution and ordinary Firecrawl web operations have their own charges. See the [guide and generic prompt](https://goolamabbas.github.io/separate-intelligence-and-search/guide/research-prompts/#firecrawl-with-optional-alexandria-data).
+
 The skill supplies instructions. It does not install providers, supply API keys, enforce permissions, or guarantee that a named operation is available.
 
 [Read the skill](skills/multi-provider-research/SKILL.md) for the complete routing rules.
 
 ## Guide
 
-[Choosing External Research Tools for AI Agents](https://github.com/goolamabbas/separate-intelligence-and-search/blob/main/docs/README.md) — the detailed companion guide, provider reference, connection guidance, and copyable research prompts.
+[Choosing External Research Tools for AI Agents](https://goolamabbas.github.io/separate-intelligence-and-search/guide/) — the detailed companion guide, provider reference, connection guidance, and copyable research prompts.
 
 ## License
 

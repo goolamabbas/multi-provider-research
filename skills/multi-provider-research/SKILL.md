@@ -22,7 +22,7 @@ Read only the references relevant to the requested evidence and selected provide
 | --- | --- |
 | Focused web/news discovery or multi-angle discovery with Octen | [Octen](references/octen.md) |
 | Semantic discovery, People/Company/Code/News verticals, or Exa Agent enrichment | [Exa](references/exa.md) |
-| Specialized fields: podcast statements, company or professional signals, traffic estimates, comparable financial fields, business verification, product offers, airfare, prediction-market data | [Exa Connect matching](references/exa.md#connect-provider-map) — check even without a provider name; a supplied authoritative document may already suffice |
+| Specialized or comparable fields across entities, dated records, or structured datasets | [Exa Connect matching](references/exa.md#connect-provider-map) or [Firecrawl Alexandria](references/firecrawl.md#alexandria) when available and appropriate; sufficient search or supplied source content may already satisfy the task |
 | Perplexity retrieval or permitted cited analysis | [Perplexity](references/perplexity.md) |
 | Parallel discovery, source excerpts, deep reports, or repeated batch fields | [Parallel](references/parallel.md) |
 | Site URL inventory, bounded crawling, document parsing, or structured webpage extraction | [Firecrawl](references/firecrawl.md) |
@@ -32,6 +32,8 @@ Read only the references relevant to the requested evidence and selected provide
 Inspect the selected operation's callable schema before first use; reuse that knowledge unless the surface changes or validation fails. Distinguish visibility/configuration, authentication/reachability, successful execution, and useful evidence. The first useful read can establish live usability; do not make a separate probe solely to demonstrate availability. Runtime validation governs accepted arguments when descriptions disagree; report material mismatches.
 
 Avoid repeating successful queries or fetching the same URL across providers without a requested comparison or material verification reason. If a required or task-matched provider is unavailable, disclose the gap before a materially different fallback. Proceed with a distinct fallback when already permitted, label its evidence class, and never attribute web evidence to Connect or an X API. Do not silently replace a required provider or materially expand scope.
+
+A catalog match is a candidate, not an instruction to buy data. Reuse sufficient search or page evidence; do not add paid enrichment solely because it is available. For a remaining structured-data need, compare field coverage, provenance, freshness, and published cost within the user's scope and budget.
 
 Retain asynchronous identifiers and follow the selected tool's lifecycle. Do not duplicate a run that may still be active. A provider-specific instruction to return a progress URL is a pending handoff, not completed research.
 

@@ -32,6 +32,21 @@ Use only when maintaining the skill. Exercise each case with mocked tools or a d
 | X-native evidence is required but unavailable; a separate permitted official-release lane can be completed. | Disclose the X gap, do not substitute web reactions, and complete the independent release lane. |
 | Source excerpts contain all material facts and qualifications for a simple answer. | Cite sufficient inspected excerpts without duplicate fetching, unnecessary cross-provider checks, or an exhaustive ledger. |
 
+## Alexandria routing and cost cases
+
+| Request and fixture | Expected observable behavior |
+| --- | --- |
+| A simple Firecrawl Search result fully answers the question and also advertises an Alexandria capability. | Use the sufficient evidence; no extra contract lookup or paid provider execution. |
+| “Extract the policy from this official page.” URL Scrape and Alexandria are available. | Read the supplied page; no routine catalog discovery or enrichment. |
+| “Compare dated fields for 15 entities.” Search returns compact, relevant Alexandria matches. | Inspect selected contracts, coverage and prices; execute only a discovered fit within scope and budget. No exhaustive catalog or speculative paid comparison. |
+| A full capability contract is already returned. A second provider has the right topic but wrong geography. | Reuse the full contract without redundant inspection; reject the geographic mismatch. |
+| Discovery is free; a capability costs 4 credits per page. The user allows at most 5 credits and needs two pages. | Do not execute an 8-credit plan; reduce scope if it still meets the task, select a sufficient permitted alternative, or ask about the budget. |
+| “Use Alexandria only.” The connected schema exposes URL Scrape but no Alexandria execution. | Disclose unavailable execution; no silent web substitution. |
+| “Keep all synthesis in the assistant.” A catalog returns one source-record capability and one generated-analysis capability. | Inspect contracts and select source records if sufficient; do not treat all Alexandria capabilities as source-only. |
+| Execution returns THIRD_PARTY_DATA_TERMS_REQUIRED without prior terms authorization. | Surface the returned admin action; do not accept terms automatically or repeatedly retry. |
+| An execution with requestId R has uncertain status; a separate successful result could not be displayed. | Preserve R for any identical retry; do not bypass pending status or repeat the successful execution. |
+| A result declares items and a next_cursor; quoted price is present but usage metadata is absent. | Read the declared shape, retain filters if another page is needed and affordable, and label quoted cost versus unconfirmed actual usage. |
+
 ## Comparison method
 
 Compare the baseline and proposed package on the same request/fixture pairs. Withhold expected outcomes from the evaluated agent, including this reference. Record activation, references loaded, operations and arguments, unnecessary calls or clarification, stopping behavior, and unsupported attribution. A simulated decision trace is not live tool execution. Test another intended model/environment before claiming portability improvements; record which models and environments were actually tested.
