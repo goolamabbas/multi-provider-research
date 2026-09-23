@@ -46,6 +46,8 @@ Use only when maintaining the skill. Exercise each case with mocked tools or a d
 | Execution returns THIRD_PARTY_DATA_TERMS_REQUIRED without prior terms authorization. | Surface the returned admin action; do not accept terms automatically or repeatedly retry. |
 | An execution with requestId R has uncertain status; a separate successful result could not be displayed. | Preserve R for any identical retry; do not bypass pending status or repeat the successful execution. |
 | A result declares items and a next_cursor; quoted price is present but usage metadata is absent. | Read the declared shape, retain filters if another page is needed and affordable, and label quoted cost versus unconfirmed actual usage. |
+| Dedicated index tools and discovered Alexandria index capabilities both fit the same question. | Compare available controls and prices, choose one suitable route, and avoid duplicate retrieval; do not confuse either with the general web research filter. |
+| A contract quotes 2 credits per 10 records with explicit rounding up; 15 requested records and a 3-credit budget. A separate fitting capability lists zero execution credits. | Estimate 4 credits for the first option, not 2 or 30; respect the budget and consider the sufficient zero-priced route without assuming all execution is paid. |
 
 ## Comparison method
 
