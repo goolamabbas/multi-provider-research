@@ -49,6 +49,19 @@ Use only when maintaining the skill. Exercise each case with mocked tools or a d
 | Dedicated index tools and discovered Alexandria index capabilities both fit the same question. | Compare available controls and prices, choose one suitable route, and avoid duplicate retrieval; do not confuse either with the general web research filter. |
 | A contract quotes 2 credits per 10 records with explicit rounding up; 15 requested records and a 3-credit budget. A separate fitting capability lists zero execution credits. | Estimate 4 credits for the first option, not 2 or 30; respect the budget and consider the sufficient zero-priced route without assuming all execution is paid. |
 
+## Exa Agent Ultra cases
+
+| Request and fixture | Expected observable behavior |
+| --- | --- |
+| “Summarize this official page.” Search, Fetch, and Ultra are available. | Fetch the supplied page; no Ultra run solely because the effort is available. |
+| “Find qualifying repositories, but keep all analysis in my selected model.” Ultra is available. | Use permitted retrieval; no Agent run, including Ultra or Connect. |
+| “Use Ultra for a comprehensive market map; spend at most $5.” The callable tool exposes Ultra but no budget control; the documented default cap is $20. | Do not start the run or invent a budget argument. Explain the missing control and resolve the boundary without treating a prompt as an enforced cap. |
+| A suitable comprehensive task has authorized spend and time limits, and the interface exposes Ultra and the needed budget controls. | Select Ultra directly if justified; apply supported limits, without a redundant cheaper run or another approval request. |
+| A run returns `status: completed`, `stopReason: budget_reached`, and actual cost below the configured cap. | Report actual returned cost and limited coverage; do not claim exhaustive results or report the cap as actual spend. |
+| A run reports `schema_satisfied` with ten rows because its output schema has `maxItems: 10`; the user requested comprehensive coverage. | Identify the scope mismatch; do not equate schema satisfaction with exhaustive discovery or automatically buy another run. |
+| A polling call times out after returning an active run ID. | Resume the same run; do not create a duplicate or treat the timeout as cancellation. |
+| “Expand this completed list within the authorized budget; exclude these rows.” Both `previousRunId` and input fields are available. | Use the completed ID as new-run context and `input.exclusion` for existing entities; use `input.data` only for rows to process. Account for the new run's cost and deduplicate returned entities. |
+
 ## Comparison method
 
 Compare the baseline and proposed package on the same request/fixture pairs. Withhold expected outcomes from the evaluated agent, including this reference. Record activation, references loaded, operations and arguments, unnecessary calls or clarification, stopping behavior, and unsupported attribution. A simulated decision trace is not live tool execution. Test another intended model/environment before claiming portability improvements; record which models and environments were actually tested.

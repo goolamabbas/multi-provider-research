@@ -14,9 +14,23 @@ Read for semantic discovery, specialized fields, or permitted Agent research. Se
 
 Treat Agent as provider-side inference, including when a simple lookup uses Connect. Use it for multi-step research, enrichment, structured list-building, or a materially matched dataset when synthesis restrictions permit it.
 
-Inspect the current `dataSources` enum, select only providers needed for the requested fields, and name them in the query. Request those fields plus source, timestamp, or evidence fields in `outputSchema`; use bounded arrays where supported. Retain and resume the same run ID until a terminal state or genuine stopping condition. An interrupted call is not cancellation; do not start a duplicate while a run may still be active.
+Inspect the current `dataSources` enum, select only providers needed for the requested fields, and name them in the query. Request those fields plus source, timestamp, or evidence fields in `outputSchema`. Match array limits to the requested scope; do not silently turn a comprehensive-list request into a small sample. Allow unknown fields rather than forcing unsupported values.
+
+Retain and resume the same run ID until a terminal state or genuine stopping condition. An interrupted call or polling timeout is not cancellation; do not start a duplicate while a run may still be active. `previousRunId` starts a new follow-up using a completed run as context; it is not how to poll an active run. Use `input.data` for rows to process or enrich and `input.exclusion` for entities already found when expanding a list. Further runs incur their own costs and must remain within the authorized scope and budget.
 
 Inspect the completed result for actual provider contribution, field provenance, errors, and partial coverage. Requested `dataSources` alone do not prove use. Separate provider-backed fields, Agent inference, and ordinary web evidence; label contribution unverified when it cannot be confirmed.
+
+### Effort and Agent Ultra
+
+Choose the smallest sufficient supported effort. Ultra is an optional Agent effort, not a separate provider or Connect dataset. Use it for large list-building, deep multi-source research, or hard-to-verify criteria when completeness matters more than latency or cost and provider-side synthesis is permitted. Ordinary lookups and supplied-page reading should stay on retrieval routes. A clearly suitable Ultra task does not require a preliminary lower-effort run.
+
+Inspect the callable effort enum, budget fields, and lifecycle controls. A connector may expose `effort: "ultra"` without exposing the direct API's budget or stop controls. Do not pass unsupported fields or describe a natural-language spending instruction as an enforced limit. If a required limit cannot be expressed, resolve the interface or budget boundary before starting; do not silently accept a higher default cap or switch interfaces. Existing sufficient authorization does not require another confirmation.
+
+As checked on September 26, 2026, Exa documents Ultra as metered usage with a default $20 run cap, not a fixed $20 charge. The direct API accepts `budget.maxCostDollars` from $1 to $100 for `auto` and `ultra`; `budget.maxDurationSeconds` from 300 to 10,800 is a soft duration ceiling for Ultra only. Exa describes complex runs as typically about 30 minutes, potentially three hours. These are dated provider terms, not measured performance; recheck applicable pricing and Connect charges before a material expenditure. Prefer fixed effort when predictable per-request pricing meets the task.
+
+Inspect `stopReason` separately from terminal status. `budget_reached`, `time_limit_reached`, or `stopped` returns what was found within that limit; qualify coverage accordingly. `schema_satisfied` reports task completion, not independent proof that every qualifying entity exists in the results. Report returned cost, effort, evidence gaps, and material limits; disclose unavailable usage metadata instead of substituting the cap for actual cost. Distinguish the provider's graceful stop operation, which retains findings, from cancellation, and use only exposed controls under the user's stopping instructions.
+
+Official references: [Ultra](https://exa.ai/docs/agent/agent-ultra.md), [Agent request and response schema](https://exa.ai/docs/reference/agent-api/create-a-run.md), and [pricing](https://exa.ai/docs/reference/pricing.md). Vendor benchmark claims do not establish superiority for the current task.
 
 ## Connect provider map
 

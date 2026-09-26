@@ -21,7 +21,7 @@ Read only the references relevant to the requested evidence and selected provide
 | Evidence need or required provider | Reference |
 | --- | --- |
 | Focused web/news discovery or multi-angle discovery with Octen | [Octen](references/octen.md) |
-| Semantic discovery, People/Company/Code/News verticals, or Exa Agent enrichment | [Exa](references/exa.md) |
+| Semantic discovery, People/Company/Code/News verticals, or Exa Agent research and enrichment, including optional Ultra effort | [Exa](references/exa.md) |
 | Specialized or comparable fields across entities, dated records, or structured datasets | [Exa Connect matching](references/exa.md#connect-provider-map) or [Firecrawl Alexandria](references/firecrawl.md#alexandria) when available and appropriate; sufficient search or supplied source content may already satisfy the task |
 | Perplexity retrieval or permitted cited analysis | [Perplexity](references/perplexity.md) |
 | Parallel discovery, source excerpts, deep reports, or repeated batch fields | [Parallel](references/parallel.md) |

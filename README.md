@@ -30,6 +30,8 @@ State any required or excluded providers and whether provider-generated analysis
 
 Firecrawl Alexandria is an optional route to structured provider data. The skill discovers current capabilities when the task benefits from them, checks coverage and published prices, and reuses sufficient search or page evidence instead of adding paid enrichment. Catalog discovery is free; execution and ordinary Firecrawl web operations have their own charges. See the [guide and generic prompt](https://goolamabbas.github.io/separate-intelligence-and-search/guide/research-prompts/#firecrawl-with-optional-alexandria-data).
 
+Exa Agent Ultra is an optional effort for comprehensive list-building and difficult multi-source research. The skill checks available budget controls, preserves run IDs, and distinguishes limited findings from exhaustive coverage. It does not make Ultra the default or claim independently measured superiority. See [when to use Ultra](https://goolamabbas.github.io/separate-intelligence-and-search/guide/choosing-providers/#when-agent-ultra-is-worth-it) and the [budgeted research example](https://goolamabbas.github.io/separate-intelligence-and-search/guide/research-prompts/#exa-agent-ultra-for-comprehensive-discovery).
+
 The skill supplies instructions. It does not install providers, supply API keys, enforce permissions, or guarantee that a named operation is available.
 
 [Read the skill](skills/multi-provider-research/SKILL.md) for the complete routing rules.
