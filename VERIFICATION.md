@@ -8,7 +8,7 @@ As checked on September 26, 2026, Exa documents Ultra as metered usage with a de
 
 ## Exa Connect — 3 and 13 September 2026
 
-The provider IDs below were exposed in the callable schema on 2026-09-13. Field descriptions remain routing hints from the 2026-09-03 catalog; no Connect run or commercial/access validation was performed in the September 13 audit. Reinspect the live enum before use. Documented partners, including [additional partners](https://exa.ai/docs/reference/agent-api/connect/additional-partners), are not guaranteed account access.
+The provider IDs listed in the [Connect provider map](skills/multi-provider-research/references/exa.md#connect-provider-map) were exposed in the callable schema on 2026-09-13. Field descriptions remain routing hints from the 2026-09-03 catalog; no Connect run or commercial/access validation was performed in the September 13 audit. Reinspect the live enum before use. Documented partners, including [additional partners](https://exa.ai/docs/reference/agent-api/connect/additional-partners), are not guaranteed account access.
 
 ## Octen — 13 September 2026
 
