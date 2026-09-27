@@ -8,6 +8,6 @@ Read for Parallel Search/Fetch or Task workflows.
 - Treat Deep Research and Task Group output as provider-side research or enrichment. Follow the live asynchronous lifecycle: do not poll automatically or start duplicates when the tool instructs the agent to return a progress URL and wait for a later user request.
 - Prefer Parallel Task over duplicate general research only when asynchronous depth or consistent batch enrichment is the distinct requirement. Exa Connect remains the specialized provider-backed-data lane.
 
-Use the current status/result tools with retained identifiers when continuation is permitted. The createDeepResearch description inspected on 2026-09-13 still directs sharing the URL and stopping unless otherwise instructed. This is a lifecycle rule for that surface, not a universal polling rule. No Task run was launched in that audit.
+Use the current status/result tools with retained identifiers when continuation is permitted. A direction to share a progress URL and stop applies to that surface, not universally to all Parallel interfaces.
 
 Report Search/Fetch versus Deep Research/Task Group, material session or task identifiers, retrieval versus provider-side research, exposed processor metadata, and pending status or limitations.

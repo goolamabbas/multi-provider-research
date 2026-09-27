@@ -1,6 +1,8 @@
 ---
 name: multi-provider-research
 description: "Route research using Octen, Exa, Perplexity, Parallel, Firecrawl, TinyFish, or X-native tools. Use for research through a named provider, specialized datasets, batch enrichment, site extraction, or browser-based evidence gathering. Skip native-only research and tasks that merely mention a provider."
+metadata:
+  version: "0.4.2"
 ---
 
 # Multi-provider research

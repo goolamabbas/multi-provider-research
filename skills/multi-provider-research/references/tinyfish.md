@@ -1,6 +1,6 @@
 # TinyFish
 
-Read for selected TinyFish discovery, focused rendered-page reading, or user-directed browser interaction. These are routing hints, not guaranteed exposed tools; TinyFish was absent from the registry inspected on 2026-09-13.
+Read for selected TinyFish discovery, focused rendered-page reading, or user-directed browser interaction. These are routing hints, not guaranteed exposed tools.
 
 - Inspect the live TinyFish surface because Search, Fetch Content, and Web Automation may be exposed separately.
 - Use Search for compact general-web, news, or research-paper discovery when it is the chosen discovery lane and no provider restriction excludes it.
