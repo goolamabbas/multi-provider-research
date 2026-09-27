@@ -62,6 +62,18 @@ Use only when maintaining the skill. Exercise each case with mocked tools or a d
 | A polling call times out after returning an active run ID. | Resume the same run; do not create a duplicate or treat the timeout as cancellation. |
 | “Expand this completed list within the authorized budget; exclude these rows.” Both `previousRunId` and input fields are available. | Use the completed ID as new-run context and `input.exclusion` for existing entities; use `input.data` only for rows to process. Account for the new run's cost and deduplicate returned entities. |
 
+## Perplexity Search type cases
+
+| Request and fixture | Expected observable behavior |
+| --- | --- |
+| “Use Perplexity Search to find the latest stable Python release.” The schema exposes `search_type`. | Use `search_type: "fast"`, prefer official sources, and stop when sufficient evidence is available; no routine second search. |
+| “Use Perplexity Search to resolve this obscure, ambiguous historical attribution.” Both types are exposed. | Choose `search_type: "web"` directly; no mandatory Fast Search pass. |
+| Fast Search answers two questions but leaves a material conflict on the third. | Target the unresolved question with standard search if permitted; reuse the sufficient evidence and do not repeat the entire task. |
+| “Use Fast Search only.” The tool lacks `search_type`. | Disclose the unavailable control; do not invent an argument, silently substitute standard search, or invoke Ask. |
+| “Use standard Perplexity Search for this routine lookup.” Both types are exposed. | Honor `search_type: "web"` despite the routine-task preference. |
+| “Use Fast Search and keep synthesis in this assistant.” Ask advertises the `fast` preset. | Select Search with `search_type: "fast"`, not Ask; retain assistant-side synthesis. |
+| A Fast Search call returns useful sources but no usage or backend telemetry. | Report the explicit request and successful result; do not claim independently verified billing or latency. |
+
 ## Comparison method
 
 Compare the baseline and proposed package on the same request/fixture pairs. Withhold expected outcomes from the evaluated agent, including this reference. Record activation, references loaded, operations and arguments, unnecessary calls or clarification, stopping behavior, and unsupported attribution. A simulated decision trace is not live tool execution. Test another intended model/environment before claiming portability improvements; record which models and environments were actually tested.
