@@ -4,11 +4,20 @@ Read for semantic discovery, specialized fields, or permitted Agent research. Se
 
 ## Search and Fetch
 
-- Translate terse input into an intent-preserving description of the ideal sources because Exa retrieval is semantic.
-- Use regular Search for ordinary semantic discovery and independent cross-checking.
-- When the evidence matches a specialized index, use the current People, Company, Code/GitHub, News, or other vertical only when exposed by the live schema. Treat search verticals as distinct from Exa Connect providers.
-- Use Advanced Search only when precise domain, date, category, freshness, text, location, or subpage controls matter.
-- Use Fetch for known URLs or when search content is insufficient.
+- Translate terse input into an intent-preserving description of the ideal sources. Use regular Search for ordinary semantic discovery; use Advanced Search when its supported filters or content controls materially help.
+- Treat the tool interface and search mode as separate choices. Use `auto` as the general-purpose default. Select `lite` for cost- or latency-sensitive retrieval when cached content and its supported parameters suffice. Never invent a mode argument on a tool that does not expose one.
+- Lite never fetches pages live. It rejects unsupported parameters, including `maxAgeHours`, `livecrawlTimeout`, text-match filters, and subpage options. Use Auto with supported freshness controls or a separate permitted Fetch when fresh content is required. Prefer Lite over legacy `fast` or `instant` for new requests where it fits; honor explicit user choices.
+- Do not rely on deprecated crawl-date or text-match filters merely because a connector still exposes them. `startCrawlDate` and `endCrawlDate` do not constrain retrieval. Use supported publication-date filters for publication dates, and content-freshness controls for page retrieval age. Inspect `warnings` and `notices`; do not claim a constraint was enforced when results report it was ignored or relaxed.
+- Use supported People, Company, News, or Publication categories when appropriate. Find code with a semantic query and suitable domain filters; do not rely on the deprecated `github` category. Search categories are distinct from Connect providers.
+- Reuse sufficient source highlights or text. Use Fetch for known URLs or missing context; inspect source dates and content before making freshness claims.
+
+### Podcast transcripts
+
+Use ordinary Search and Fetch for podcast episode discovery, transcript summaries, and quotations. Where supported, restrict discovery with `includeDomains: ["exa.ai/library/podcast"]`; do not invent a podcast category. Preserve the episode date, speaker labels, timestamps, and supporting passage when available. Check coverage rather than assuming every episode is indexed.
+
+Use Particle through Agent when additional analytics or structured provider fields materially add to the evidence, or when the user explicitly requires Particle. Respect synthesis restrictions and do not start an Agent run solely because the topic is podcasts.
+
+Official references: [Search modes and controls](https://exa.ai/docs/search/quickstart), [warnings and legacy parameters](https://exa.ai/docs/changelog), and [podcast retrieval](https://exa.ai/library/podcast).
 
 ## Agent and Connect
 
@@ -62,7 +71,7 @@ Documentation:
 
 Match the requested fields and coverage, not just the topic. Prefer a specialized dataset when it materially supplies the needed evidence; an authoritative supplied document may already satisfy a document-reading request. Explicit provider requirements and synthesis restrictions still apply.
 
-- A request about what podcast speakers said should trigger a Particle availability check even if it says only “use Exa.”
+- A request about what podcast speakers said can use ordinary Search/Fetch transcripts. Check Particle when additional analytics or structured fields are needed, or the user explicitly requests it.
 - A request for company traffic estimates should trigger Similarweb, not generic web estimates.
 - A request to screen companies using comparable financial or ownership fields should trigger a Financial Datasets availability check. Reading one supplied official filing can be satisfied directly without an enrichment run. Never present ordinary web evidence as structured provider data.
 - A request for current prediction-market odds or their history should trigger a Polymarket availability check rather than treating commentary about the odds as market data.

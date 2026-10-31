@@ -2,7 +2,7 @@
 name: multi-provider-research
 description: "Route research using Octen, Exa, Perplexity, Parallel, Firecrawl, TinyFish, or X-native tools. Use for research through a named provider, specialized datasets, batch enrichment, site extraction, or browser-based evidence gathering. Skip native-only research and tasks that merely mention a provider."
 metadata:
-  version: "0.4.2"
+  version: "0.5.0"
 ---
 
 # Multi-provider research
@@ -23,8 +23,8 @@ Read only the references relevant to the requested evidence and selected provide
 
 | Evidence need or required provider | Reference |
 | --- | --- |
-| Focused web/news discovery or multi-angle discovery with Octen | [Octen](references/octen.md) |
-| Semantic discovery, People/Company/Code/News verticals, or Exa Agent research and enrichment, including optional Ultra effort | [Exa](references/exa.md) |
+| Destination URL lookup, focused web/news discovery, or multi-angle discovery with Octen | [Octen](references/octen.md) |
+| Semantic discovery, search categories, podcast transcripts, or Exa Agent research and enrichment, including optional Ultra effort | [Exa](references/exa.md) |
 | Specialized or comparable fields across entities, dated records, or structured datasets | [Exa Connect matching](references/exa.md#connect-provider-map) or [Firecrawl Alexandria](references/firecrawl.md#alexandria) when available and appropriate; sufficient search or supplied source content may already satisfy the task |
 | Perplexity retrieval or permitted cited analysis | [Perplexity](references/perplexity.md) |
 | Parallel discovery, source excerpts, deep reports, or repeated batch fields | [Parallel](references/parallel.md) |

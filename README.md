@@ -1,6 +1,6 @@
 # Multi-provider research
 
-Version **0.4.2** · [Changelog](CHANGELOG.md) · [Historical verification log](VERIFICATION.md)
+Version **0.5.0** · [Changelog](CHANGELOG.md) · [Historical verification log](VERIFICATION.md)
 
 A portable research-routing skill for AI agents. It selects the smallest useful set of available research providers, respects provider and synthesis restrictions, verifies source evidence, and reports material gaps.
 
@@ -8,7 +8,7 @@ The skill covers Octen, Exa Search/Agent/Connect, Perplexity, Parallel, Firecraw
 
 ## Install
 
-1. Download [multi-provider-research-v0.4.2.zip](https://github.com/goolamabbas/multi-provider-research/releases/download/v0.4.2/multi-provider-research-v0.4.2.zip) from the [release](https://github.com/goolamabbas/multi-provider-research/releases/tag/v0.4.2). The release also includes `SHA256SUMS` for integrity checking.
+1. Download [multi-provider-research-v0.5.0.zip](https://github.com/goolamabbas/multi-provider-research/releases/download/v0.5.0/multi-provider-research-v0.5.0.zip) from the [release](https://github.com/goolamabbas/multi-provider-research/releases/tag/v0.5.0). The release also includes `SHA256SUMS` for integrity checking.
 2. Extract the ZIP. Its single top-level folder is `multi-provider-research/`, containing `SKILL.md`, `references/`, and `agents/`.
 3. Copy that entire folder into the personal skills directory supported by your application. Consult your application's current instructions for its skills directory and discovery behavior.
 4. Start a fresh task or reload skills as your application requires.

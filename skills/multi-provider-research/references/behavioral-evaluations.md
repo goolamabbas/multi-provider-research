@@ -84,3 +84,15 @@ Use only when maintaining the skill. Exercise each case with mocked tools or a d
 Compare the baseline and proposed package on the same request/fixture pairs. Withhold expected outcomes from the evaluated agent, including this reference. Record activation, references loaded, operations and arguments, unnecessary calls or clarification, stopping behavior, and unsupported attribution. A simulated decision trace is not live tool execution. Test another intended model/environment before claiming portability improvements; record which models and environments were actually tested.
 
 Record whether validation was a manual walkthrough, mocked execution, or independent agent run. Note failures and untested live behavior; passing these cases does not prove provider authentication or production reliability.
+
+## Search selection and transcript cases
+
+| Request and fixture | Expected observable behavior |
+| --- | --- |
+| “Use Octen to find the Python documentation homepage.” Pulse is available. | Use Pulse for candidate URLs; do not treat titles as page-content evidence. |
+| “Use Octen to check today's API pricing changes.” Pulse and Search are available. | Use current web/news discovery and sufficient page evidence, not Pulse as a freshness source. |
+| “Use Exa for a cheap lookup; cached text is fine.” Lite is exposed. | Select Lite if its controls suffice; no unnecessary Agent run or fresh fetch. |
+| “Use Exa to check the policy as it stands today.” Lite and Auto expose different controls. | Use Auto with supported freshness controls or a permitted separate Fetch; do not send freshness arguments to Lite. |
+| Exa accepts a crawl-date option but warns that it was ignored. | Do not claim enforcement. Use suitable supported controls or disclose the remaining limitation. |
+| “Use Exa to quote this podcast speaker; all analysis must stay here.” | Use Search/Fetch transcripts and preserve attribution; no Particle Agent run merely for a podcast topic. |
+| “Use only Particle through Exa Agent for sentiment analytics.” | Honor the explicit provider restriction and inspect its fields; do not substitute ordinary podcast search. |

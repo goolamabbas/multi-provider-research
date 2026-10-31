@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.5.0 — 31 October 2026
+
+- Route destination URL lookups to Octen Pulse when available; retain ordinary search for fresh, broad, or filtered research.
+- Clarify Exa Auto versus cached-only Lite, deprecated search controls and categories, and warnings about ignored constraints.
+- Use ordinary Exa Search/Fetch for indexed podcast transcripts; reserve Particle via Agent for additional structured data, analytics, or explicit requests.
+- Add seven routing evaluation scenarios. Dynamic Highlights remains outside this update.
+
 ## 0.4.2 — 27 September 2026
 
 - Add a dedicated installable ZIP, SHA-256 checksum, and reproducible packaging script.
