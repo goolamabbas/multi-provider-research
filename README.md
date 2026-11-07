@@ -8,6 +8,18 @@ The skill covers Octen, Exa Search/Agent/Connect, Perplexity, Parallel, Firecraw
 
 ## Install
 
+### Ask your coding agent
+
+In a coding agent with local file access, paste:
+
+```text
+Install the multi-provider-research skill by following https://raw.githubusercontent.com/goolamabbas/multi-provider-research/main/install.md
+```
+
+Inside a project, this defaults to installation for that project. Add “for all my projects” to request a personal installation for your application. The agent checks the supported location and may ask for permission to write there. Provider connections are separate.
+
+### Manual installation
+
 1. Download [multi-provider-research-v0.5.0.zip](https://github.com/goolamabbas/multi-provider-research/releases/download/v0.5.0/multi-provider-research-v0.5.0.zip) from the [release](https://github.com/goolamabbas/multi-provider-research/releases/tag/v0.5.0). The release also includes `SHA256SUMS` for integrity checking.
 2. Extract the ZIP. Its single top-level folder is `multi-provider-research/`, containing `SKILL.md`, `references/`, and `agents/`.
 3. Copy that entire folder into the personal skills directory supported by your application. Consult your application's current instructions for its skills directory and discovery behavior.
