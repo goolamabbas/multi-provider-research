@@ -2,7 +2,7 @@
 name: multi-provider-research
 description: "Route research using Octen, Exa, Perplexity, Parallel, Firecrawl, TinyFish, or X-native tools. Use for research through a named provider, specialized datasets, batch enrichment, site extraction, or browser-based evidence gathering. Skip native-only research and tasks that merely mention a provider."
 metadata:
-  version: "0.5.0"
+  version: "0.6.0"
 ---
 
 # Multi-provider research
@@ -24,8 +24,8 @@ Read only the references relevant to the requested evidence and selected provide
 | Evidence need or required provider | Reference |
 | --- | --- |
 | Destination URL lookup, focused web/news discovery, or multi-angle discovery with Octen | [Octen](references/octen.md) |
-| Semantic discovery, search categories, podcast transcripts, or Exa Agent research and enrichment, including optional Ultra effort | [Exa](references/exa.md) |
-| Specialized or comparable fields across entities, dated records, or structured datasets | [Exa Connect matching](references/exa.md#connect-provider-map) or [Firecrawl Alexandria](references/firecrawl.md#alexandria) when available and appropriate; sufficient search or supplied source content may already satisfy the task |
+| Semantic discovery, Library collections and structured source records, search categories, or Exa Agent research and enrichment, including optional Ultra effort | [Exa](references/exa.md) |
+| Specialized or comparable fields across entities, dated records, or structured datasets | [Exa Library and Connect selection](references/exa.md#library-or-connect) or [Firecrawl Alexandria](references/firecrawl.md#alexandria), according to required fields, provenance, coverage and cost; sufficient search or supplied records may already satisfy the task |
 | Perplexity retrieval or permitted cited analysis | [Perplexity](references/perplexity.md) |
 | Parallel discovery, source excerpts, deep reports, or repeated batch fields | [Parallel](references/parallel.md) |
 | Site URL inventory, bounded crawling, document parsing, or structured webpage extraction | [Firecrawl](references/firecrawl.md) |

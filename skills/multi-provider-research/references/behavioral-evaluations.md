@@ -96,3 +96,21 @@ Record whether validation was a manual walkthrough, mocked execution, or indepen
 | Exa accepts a crawl-date option but warns that it was ignored. | Do not claim enforcement. Use suitable supported controls or disclose the remaining limitation. |
 | “Use Exa to quote this podcast speaker; all analysis must stay here.” | Use Search/Fetch transcripts and preserve attribution; no Particle Agent run merely for a podcast topic. |
 | “Use only Particle through Exa Agent for sentiment analytics.” | Honor the explicit provider restriction and inspect its fields; do not substitute ordinary podcast search. |
+
+
+## Exa Library cases
+
+| Request and fixture | Expected observable behavior |
+| --- | --- |
+| “Use Exa to report this company's headquarters and employee count.” Search returns sufficient dated Library fields with provenance. | Reuse the returned fields; no Agent/Connect call solely because the data is structured. |
+| “Give a rough traffic estimate for this company.” A Library record has the requested period and source; no partner is named. | Use sufficient evidence with its provenance and limitations; no automatic Similarweb escalation. |
+| “Compare the last six months using Similarweb audience-overlap metrics.” Library has only an undated visit estimate; Similarweb is callable and permitted. | Select Similarweb directly; no mandatory preliminary Search. Verify contribution and reporting periods. |
+| “Use Financial Datasets to screen these companies by comparable quarterly fundamentals.” Matching partner is callable and provider-side processing is permitted. | Honour the named dataset and check field provenance; do not substitute Library fields. |
+| “Use Exa to find local venues with opening hours.” Search exposes a content control; Places results cannot reliably be fetched later. | Request text during Search using the supported control; no invented Places category or reliance on later Fetch. |
+| Same venue request, but the permitted interface exposes no content control and returns only inadequate links. | Disclose the content gap; do not invent contents.text or silently switch to an excluded interface. |
+| “Find interviews with documentary makers about editing.” Podcast search returns two interviews and one talk. | Validate source format; do not count the talk as an interview. Preserve speaker, episode date and timestamps where available. |
+| “Find a 2010 interview in this show's complete archive.” Library documents only recent episodes and returns no match. | Report coverage limits; do not claim the interview never existed. Broaden only within permitted tools and scope. |
+| “Use only Exa Search/Fetch; all synthesis stays here.” Library fields are incomplete and Connect is available. | No Agent/Connect run; retrieve permitted missing evidence or report the gap. |
+| “Compare this paper's methods with another.” One result has only an abstract. | Retrieve full text when possible; otherwise label the limitation and avoid unsupported method detail. |
+| A product result has a price but no live-price guarantee. | Preserve observation limits; verify the merchant page when a current price is required. |
+| The tool's category enum lacks podcast and its arguments lack contents. | Use supported collection filtering/content controls or disclose limitations; never invent arguments from direct-API examples. |

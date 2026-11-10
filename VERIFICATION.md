@@ -25,3 +25,11 @@ Use the current status/result tools with retained identifiers when continuation 
 ## Scope
 
 The Octen schema snapshot exposed top-level `full_content: {enable: true}` and optional `max_tokens` for Search and Broad Search. Execution coverage is limited as recorded above. The published [ChatGPT + TinyFish beginner walkthrough](https://goolamabbas.github.io/separate-intelligence-and-search/guide/tinyfish-beginner/) records a later, separate Search/Fetch run; the earlier absence observation is not a current availability claim.
+
+## Exa Library — 10 November 2026 (0.6.0)
+
+Structural validation passed with the skill-creator validator in an isolated PyYAML environment. Local reference destinations were checked. Twelve new Library cases received manual dry-run decision traces; no independent agent evaluation or live execution of those fixtures was performed. Existing provider restrictions and Agent budget/lifecycle guidance were retained.
+
+The preceding documentation review executed one podcast-scoped Exa Advanced Search and one episode Fetch, returning episode pages and a timestamped, speaker-labelled transcript excerpt. This demonstrates that path only, not improved retrieval quality or performance of the revised skill. No Places, partner-data or Agent scenario was executed. The Library homepage failed in Exa Fetch; Parallel supplied it, and direct HTTPS checks confirmed key Places and podcast limitations. Sources: https://exa.ai/library ; https://exa.ai/library/place ; https://exa.ai/library/podcast .
+
+No release or personal installation was performed. Version metadata remains at the existing release pending approval.

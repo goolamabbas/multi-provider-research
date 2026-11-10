@@ -1,23 +1,39 @@
 # Exa
 
-Read for semantic discovery, specialized fields, or permitted Agent research. Search verticals and Connect providers are different surfaces.
+Read for semantic discovery, specialized fields, or permitted Agent research. Library collections, API search categories and Connect providers are different surfaces.
 
 ## Search and Fetch
 
-- Translate terse input into an intent-preserving description of the ideal sources. Use regular Search for ordinary semantic discovery; use Advanced Search when its supported filters or content controls materially help.
+- Describe the source or record sought, the entity or topic, and the qualifying details that matter. For interviews, name the practitioner or creative challenge; for calls, the company and fiscal period; for companies, what they sell and to whom; for papers, the method or finding. Add dates only when relevant, without changing the user’s intent. Use regular Search for ordinary semantic discovery; use Advanced Search when its supported filters or content controls materially help.
 - Treat the tool interface and search mode as separate choices. Use `auto` as the general-purpose default. Select `lite` for cost- or latency-sensitive retrieval when cached content and its supported parameters suffice. Never invent a mode argument on a tool that does not expose one.
-- Lite never fetches pages live. It rejects unsupported parameters, including `maxAgeHours`, `livecrawlTimeout`, text-match filters, and subpage options. Use Auto with supported freshness controls or a separate permitted Fetch when fresh content is required. Prefer Lite over legacy `fast` or `instant` for new requests where it fits; honor explicit user choices.
+- Lite does not fetch web pages live; this does not establish the refresh mechanism of every structured Library record. It rejects unsupported parameters, including `maxAgeHours`, `livecrawlTimeout`, text-match filters, and subpage options. Use Auto with supported freshness controls or a separate permitted Fetch when fresh content is required. Prefer Lite over legacy `fast` or `instant` for new requests where it fits; honor explicit user choices.
 - Do not rely on deprecated crawl-date or text-match filters merely because a connector still exposes them. `startCrawlDate` and `endCrawlDate` do not constrain retrieval. Use supported publication-date filters for publication dates, and content-freshness controls for page retrieval age. Inspect `warnings` and `notices`; do not claim a constraint was enforced when results report it was ignored or relaxed.
-- Use supported People, Company, News, or Publication categories when appropriate. Find code with a semantic query and suitable domain filters; do not rely on the deprecated `github` category. Search categories are distinct from Connect providers.
-- Reuse sufficient source highlights or text. Use Fetch for known URLs or missing context; inspect source dates and content before making freshness claims.
+- Use supported People, Company, News, Publication, or Financial Report categories when appropriate. Find code with a semantic query and suitable domain filters; do not rely on the deprecated `github` category. Search categories are distinct from Connect providers.
+- Reuse sufficient source highlights or text. Use Fetch for known URLs or missing context, except results documented as requiring search-time content (see Places below); inspect source dates and content before making freshness claims.
+
+### Library collections and content
+
+Library records are available through ordinary Search alongside web pages. A collection is not necessarily a category: do not invent categories for podcasts, places or other Library labels. Use supported categories or documented domain/path filters only when they help the task. Do not derive filters mechanically from collection landing URLs: SEC guidance uses `sec.gov`, while earnings-call guidance uses `exa.ai/library/markets/stocks`. Still verify entity, document type and fiscal period in the results.
+
+Search can return existing structured source fields without an Agent run. Inspect whether the current interface actually returns those fields; do not assume direct-API `entities` or content options are exposed by every connector. Preserve source provenance and distinguish returned values from inferred ones.
+
+For Places, request text in the search call: Exa documents that later Fetch is unreliable. Places results appear automatically for relevant Auto/Lite queries, without an extra Places parameter. Use the interface's supported content control (the direct API uses `contents.text`); do not pass API fields to a connector that lacks them. If required content cannot be obtained through the permitted interface, disclose the gap. A listing of up to ten places is not an exhaustive inventory.
+
+For papers, distinguish abstracts from full text, which is available only where supplied. Product listing prices are not live; verify price and availability with the merchant when needed. For company profiles and financial records, retain field dates, reporting periods and original-source links where available.
+
+Official references: [Library](https://exa.ai/library), [Places](https://exa.ai/library/place), [SEC filings](https://exa.ai/library/sec-filing), [earnings calls](https://exa.ai/library/earnings-call), [papers](https://exa.ai/library/publication), [products](https://exa.ai/library/product).
 
 ### Podcast transcripts
 
-Use ordinary Search and Fetch for podcast episode discovery, transcript summaries, and quotations. Where supported, restrict discovery with `includeDomains: ["exa.ai/library/podcast"]`; do not invent a podcast category. Preserve the episode date, speaker labels, timestamps, and supporting passage when available. Check coverage rather than assuming every episode is indexed.
+Use ordinary Search and Fetch for podcast episode discovery, transcript summaries, and quotations. Where supported, restrict discovery with `includeDomains: ["exa.ai/library/podcast"]`; do not invent a podcast category. Preserve the episode date, speaker labels, timestamps, and supporting passage when available. The collection currently describes the 30 most recent episodes per show; check current coverage rather than assuming a complete archive. A missing result is not proof an interview does not exist. Check that a result is actually an interview when that format is requested, and retrieve surrounding context when highlights omit qualifications.
 
 Use Particle through Agent when additional analytics or structured provider fields materially add to the evidence, or when the user explicitly requires Particle. Respect synthesis restrictions and do not start an Agent run solely because the topic is podcasts.
 
 Official references: [Search modes and controls](https://exa.ai/docs/search/quickstart), [warnings and legacy parameters](https://exa.ai/docs/changelog), and [podcast retrieval](https://exa.ai/library/podcast).
+
+### Library or Connect
+
+Choose by required fields, period, comparability, provenance and coverage, not topic alone. Use sufficient Library/search evidence when it meets the request. Select a matching partner directly when its distinct fields are required or explicitly requested; do not force a preliminary Search call. Structured records alone do not require Agent or Connect, and Library fields are not automatically equivalent to a named partner's data. Respect explicit provider and synthesis restrictions.
 
 ## Agent and Connect
 
@@ -72,8 +88,8 @@ Documentation:
 Match the requested fields and coverage, not just the topic. Prefer a specialized dataset when it materially supplies the needed evidence; an authoritative supplied document may already satisfy a document-reading request. Explicit provider requirements and synthesis restrictions still apply.
 
 - A request about what podcast speakers said can use ordinary Search/Fetch transcripts. Check Particle when additional analytics or structured fields are needed, or the user explicitly requests it.
-- A request for company traffic estimates should trigger Similarweb, not generic web estimates.
-- A request to screen companies using comparable financial or ownership fields should trigger a Financial Datasets availability check. Reading one supplied official filing can be satisfied directly without an enrichment run. Never present ordinary web evidence as structured provider data.
+- For company traffic estimates, compare the required metrics, periods, provenance and comparability with available evidence. Sufficient Library fields may answer a bounded request; select Similarweb when its particular data is needed or explicitly requested. Never label Library traffic as Similarweb data without evidence of that provenance.
+- For screening using comparable financial or ownership fields, check a matching Financial Datasets route when its coverage supplies the required evidence; select it directly if clearly needed or explicitly requested. Existing sufficient records need no enrichment. Reading one supplied official filing can be satisfied directly without an enrichment run. Never present ordinary web evidence as structured provider data.
 - A request for current prediction-market odds or their history should trigger a Polymarket availability check rather than treating commentary about the odds as market data.
 - A company research task may justify more than one provider only when the output requires distinct fields, such as Fiber firmographics plus Similarweb traffic. Avoid automatic multi-provider enrichment.
 

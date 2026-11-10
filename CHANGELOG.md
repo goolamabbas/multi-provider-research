@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.6.0 — 10 November 2026
+
+- Distinguish Exa Library records, search categories and Connect partners; select by evidence requirements without mandatory Search-first escalation.
+- Add collection-aware query guidance, Places search-time content handling and coverage/provenance checks.
+- Add twelve Library routing evaluation cases. See VERIFICATION.md for the local validation scope.
+
 ## 0.5.0 — 31 October 2026
 
 - Route destination URL lookups to Octen Pulse when available; retain ordinary search for fresh, broad, or filtered research.
