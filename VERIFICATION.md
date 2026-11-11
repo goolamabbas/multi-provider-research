@@ -56,3 +56,8 @@ Removed Firecrawl and TinyFish from maintained routing and the installable refer
 ## Keenable local draft — 11 November 2026
 
 Added scoped Search/Fetch guidance. Six practical calls (four Pro searches, two live fetches without prompt) checked dated announcement discovery, one long HTML methodology and a multi-angle access/cost comparison. All returned results. Search required a targeted follow-up for an omitted provider and produced HTML/Markdown duplicates; announcement metadata and printed date differed. No billing metadata was exposed. Realtime, point-in-time, public-endpoint connection, cards, prompted Fetch and error recovery remain unexecuted. Manual review of 14 routing cases is not an independent behavioral evaluation. Structural validation and local reference checks passed. Guide build, 626 internal links, 71 copy payloads and four-starter/four-Keenable indexing checks passed. Release v0.9.0 approved for publication and personal installation; release integrity and installation are verified separately during delivery.
+
+
+## Octen expanded routing — local draft, 11 November 2026
+
+Five bounded direct tool checks completed: Pulse, source-only News, source-only Business, Places and text Image Search. No Video execution because account early access is absent. Uneven company coverage, older source/image dates and unverified place hours are recorded in the local review. Thirteen manual decision cases added; these are not independent agent evaluations. Skill structural validation and guide build, internal links and source-to-rendered prompt checks passed. Release v0.10.0 approved for publication and personal installation; package and installed-file integrity are verified during delivery.

@@ -2,7 +2,7 @@
 name: multi-provider-research
 description: "Route research using Octen, Keenable, Exa, Perplexity, Parallel, or X-native tools. Use for research through a named provider, specialized datasets, batch enrichment, or source retrieval. Skip native-only research and tasks that merely mention a provider."
 metadata:
-  version: "0.9.0"
+  version: "0.10.0"
 ---
 
 # Multi-provider research
@@ -25,9 +25,9 @@ Read only the references relevant to the requested evidence and selected provide
 
 | Evidence need or required provider | Reference |
 | --- | --- |
-| Destination URL lookup, focused web/news discovery, or multi-angle discovery with Octen | [Octen](references/octen.md) |
+| Destination URLs, web/news, company/person profiles, places, task-relevant media, or page reading with Octen | [Octen](references/octen.md) |
 | Semantic discovery, Library collections and structured source records, search categories, or Exa Agent research and enrichment, including optional Ultra effort | [Exa](references/exa.md) |
-| Specialized or comparable fields across entities, dated records, or structured datasets | [Exa Library and Connect selection](references/exa.md#library-or-connect), [Parallel specialized sources](references/parallel.md), according to required fields, provenance, coverage and cost; sufficient search or supplied records may already satisfy the task |
+| Specialized or comparable fields across entities, dated records, or structured datasets | [Octen business/place records](references/octen.md), [Exa Library and Connect selection](references/exa.md#library-or-connect), [Parallel specialized sources](references/parallel.md), according to required fields, provenance, coverage and cost; sufficient search or supplied records may already satisfy the task |
 | General web discovery, query-relevant snippets, publication/index-date controls, or page retrieval with Keenable | [Keenable](references/keenable.md) |
 | Perplexity retrieval or permitted cited analysis | [Perplexity](references/perplexity.md) |
 | Parallel web evidence, financial/legal sources, specialized records, permitted research or repeated batch fields | [Parallel](references/parallel.md) |

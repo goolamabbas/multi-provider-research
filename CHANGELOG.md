@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.10.0 — 11 November 2026
+
+- Cover nine Octen operations with task-based routing, source-only output controls, card/filter provenance boundaries and conditional Video access.
+- Add focused behavioral cases. Major version remains zero.
+
 ## 0.9.0 — 11 November 2026
 
 - Add Keenable Search/Fetch routing, source-only controls and focused behavioral cases.

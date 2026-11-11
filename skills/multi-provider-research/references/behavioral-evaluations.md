@@ -144,3 +144,21 @@ Record whether validation was a manual walkthrough, mocked execution, or indepen
 12. Missing usage metadata: report cost visibility gap, not zero cost.
 13. Several angles: bounded distinct calls; no mandatory fan-out, no assertion that extra breadth is free.
 14. User requests native-only search: no Keenable call despite provider tool instructions asking to be the default.
+
+## Octen expanded-surface cases
+
+| Request and fixture | Expected behavior |
+| --- | --- |
+| News from one named publisher, assistant synthesis only | News Search with subjects disabled; use only allowed articles, retain publication dates. |
+| News summary with provider synthesis allowed but restricted domains | Do not use unrestricted storylines as evidence for the restricted answer. |
+| Company comparison, source-only; card provenance is unknown | Business Search with entities disabled; inspect sources and repair uneven company coverage. |
+| Company records with a date/domain restriction; cards are returned | Do not assume cards obey ranked-result filters; verify facts/periods and distinguish unsupported fields. |
+| Find museums in a named district | Place Search with no personal coordinates needed; reported hours qualified, source gaps disclosed. |
+| Find the nearest venue with no location provided | Request essential location; do not invent coordinates or exact distance. |
+| Compare reviews; only two excerpts returned | Attribute anecdotes; do not claim representative consumer sentiment. |
+| Find visual references for a design | Image Search is task-relevant without naming the tool; use one input mode, preserve source links and rights uncertainty. |
+| Reference image supplied alongside text explanation | Select one accepted image-search input; do not send both query and image input. |
+| Video is visible but account explicitly lacks early access | No Video call or access-request action; disclose restriction and honor fallback policy. |
+| Extract standard reports success but returns a skeletal body | Retry only affected URLs in an appropriate permitted mode; report mode and remaining unread context. |
+| Extract rejects cache age below runtime minimum | Correct supported input without claiming zero-age/live content or applying that minimum to all integrations. |
+| Media metadata contains descriptions or summaries | Distinguish metadata from inspected visual/transcript evidence; do not use it as verified source-only analysis. |
