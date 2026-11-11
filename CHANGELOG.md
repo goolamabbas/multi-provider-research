@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.8.0 — 11 November 2026
+
+- Narrow maintained routing to Octen, Exa, Perplexity, Parallel and authenticated X. Remove Firecrawl and TinyFish references, dedicated evaluations and reporting guidance.
+- Keep explicit requests for other providers separate from automatic skill routing.
+
+
 ## 0.7.1 — 11 November 2026
 
 - Clarify that Finance/Legal web-index improvements are separate from specialized dataset operations at the routing decision.

@@ -1,10 +1,10 @@
 # Multi-provider research
 
-Version **0.7.1** · [Changelog](CHANGELOG.md) · [Historical verification log](VERIFICATION.md)
+Version **0.8.0** · [Changelog](CHANGELOG.md) · [Historical verification log](VERIFICATION.md)
 
 A portable research-routing skill for AI agents. It selects the smallest useful set of available research providers, respects provider and synthesis restrictions, verifies source evidence, and reports material gaps.
 
-The skill covers Octen, Exa Search/Agent/Connect, Perplexity, Parallel, Firecrawl, TinyFish, and authenticated X interfaces. It works with any available subset, including one provider. Provider access, authentication, billing, and available operations depend on your environment.
+The skill covers Octen, Exa Search/Agent/Connect, Perplexity, Parallel, and authenticated X interfaces. It works with any available subset, including one provider. Provider access, authentication, billing, and available operations depend on your environment.
 
 ## Install
 
@@ -20,7 +20,7 @@ Inside a project, this defaults to installation for that project. Add “for all
 
 ### Manual installation
 
-1. Download [multi-provider-research-v0.7.1.zip](https://github.com/goolamabbas/multi-provider-research/releases/download/v0.7.1/multi-provider-research-v0.7.1.zip) from the [release](https://github.com/goolamabbas/multi-provider-research/releases/tag/v0.7.1). The release also includes `SHA256SUMS` for integrity checking.
+1. Download [multi-provider-research-v0.8.0.zip](https://github.com/goolamabbas/multi-provider-research/releases/download/v0.8.0/multi-provider-research-v0.8.0.zip) from the [release](https://github.com/goolamabbas/multi-provider-research/releases/tag/v0.8.0). The release also includes `SHA256SUMS` for integrity checking.
 2. Extract the ZIP. Its single top-level folder is `multi-provider-research/`, containing `SKILL.md`, `references/`, and `agents/`.
 3. Copy that entire folder into the personal skills directory supported by your application. Consult your application's current instructions for its skills directory and discovery behavior.
 4. Start a fresh task or reload skills as your application requires.
@@ -44,7 +44,6 @@ State any required or excluded providers and whether provider-generated analysis
 
 By default, ordinary lookups use source retrieval and analysis by the current assistant. Native search and page reading may help within your restrictions. If a required provider or reader is unavailable, the skill reports the gap and continues other permitted work; replacement requires an already-permitted fallback. For unrestricted tasks, it can choose another suitable tool and disclose the substitution.
 
-Firecrawl Alexandria is an optional route to structured provider data. The skill discovers current capabilities when the task benefits from them, checks coverage and published prices, and reuses sufficient search or page evidence instead of adding paid enrichment. Catalog discovery is free; execution and ordinary Firecrawl web operations have their own charges. See the [guide and generic prompt](https://goolamabbas.github.io/separate-intelligence-and-search/guide/research-prompts/#firecrawl-with-optional-alexandria-data).
 
 Exa Agent Ultra is an optional effort for comprehensive list-building and difficult multi-source research. The skill checks available budget controls, preserves run IDs, and distinguishes limited findings from exhaustive coverage. It does not make Ultra the default or claim independently measured superiority. See [when to use Ultra](https://goolamabbas.github.io/separate-intelligence-and-search/guide/choosing-providers/#when-agent-ultra-is-worth-it) and the [budgeted research example](https://goolamabbas.github.io/separate-intelligence-and-search/guide/research-prompts/#exa-agent-ultra-for-comprehensive-discovery).
 

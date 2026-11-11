@@ -1,11 +1,13 @@
 ---
 name: multi-provider-research
-description: "Route research using Octen, Exa, Perplexity, Parallel, Firecrawl, TinyFish, or X-native tools. Use for research through a named provider, specialized datasets, batch enrichment, site extraction, or browser-based evidence gathering. Skip native-only research and tasks that merely mention a provider."
+description: "Route research using Octen, Exa, Perplexity, Parallel, or X-native tools. Use for research through a named provider, specialized datasets, batch enrichment, or source retrieval. Skip native-only research and tasks that merely mention a provider."
 metadata:
-  version: "0.7.1"
+  version: "0.8.0"
 ---
 
 # Multi-provider research
+
+This skill maintains routing for Octen, Exa, Perplexity, Parallel and authenticated X interfaces. For other providers, use their own instructions when explicitly requested; do not automatically add them through this skill.
 
 Use the minimum sufficient set of available providers. Give each a distinct evidence role within the user's requested outcome; a single provider can be enough.
 
@@ -25,11 +27,9 @@ Read only the references relevant to the requested evidence and selected provide
 | --- | --- |
 | Destination URL lookup, focused web/news discovery, or multi-angle discovery with Octen | [Octen](references/octen.md) |
 | Semantic discovery, Library collections and structured source records, search categories, or Exa Agent research and enrichment, including optional Ultra effort | [Exa](references/exa.md) |
-| Specialized or comparable fields across entities, dated records, or structured datasets | [Exa Library and Connect selection](references/exa.md#library-or-connect), [Parallel specialized sources](references/parallel.md), or [Firecrawl Alexandria](references/firecrawl.md#alexandria), according to required fields, provenance, coverage and cost; sufficient search or supplied records may already satisfy the task |
+| Specialized or comparable fields across entities, dated records, or structured datasets | [Exa Library and Connect selection](references/exa.md#library-or-connect), [Parallel specialized sources](references/parallel.md), according to required fields, provenance, coverage and cost; sufficient search or supplied records may already satisfy the task |
 | Perplexity retrieval or permitted cited analysis | [Perplexity](references/perplexity.md) |
 | Parallel web evidence, financial/legal sources, specialized records, permitted research or repeated batch fields | [Parallel](references/parallel.md) |
-| Site URL inventory, bounded crawling, document parsing, or structured webpage extraction | [Firecrawl](references/firecrawl.md) |
-| Focused browser-rendered reading or user-directed browser interaction | [TinyFish](references/tinyfish.md) |
 | X posts, Articles, accounts, timelines, bookmarks, engagement, search, counts, or trends | [X-native routing](references/x-routing.md) |
 
 Inspect the selected operation's callable schema before first use; reuse that knowledge unless the surface changes or validation fails. Distinguish visibility/configuration, authentication/reachability, successful execution, and useful evidence. The first useful read can establish live usability; do not make a separate probe solely to demonstrate availability. Runtime validation governs accepted arguments when descriptions disagree; report material mismatches.

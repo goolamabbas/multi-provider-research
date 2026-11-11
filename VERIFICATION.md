@@ -16,7 +16,7 @@ A paired MCP Search check on 2026-09-13 returned highlights with full-content co
 
 ## TinyFish — 13 September 2026
 
-These are routing hints, not guaranteed exposed tools; TinyFish was absent from the registry inspected on 2026-09-13.
+TinyFish support has been removed in the current draft; this observation is retained only as history. TinyFish was absent from the registry inspected on 2026-09-13.
 
 ## Parallel — 13 September 2026
 
@@ -24,7 +24,7 @@ Use the current status/result tools with retained identifiers when continuation 
 
 ## Scope
 
-The Octen schema snapshot exposed top-level `full_content: {enable: true}` and optional `max_tokens` for Search and Broad Search. Execution coverage is limited as recorded above. The published [ChatGPT + TinyFish beginner walkthrough](https://goolamabbas.github.io/separate-intelligence-and-search/guide/tinyfish-beginner/) records a later, separate Search/Fetch run; the earlier absence observation is not a current availability claim.
+The Octen schema snapshot exposed top-level `full_content: {enable: true}` and optional `max_tokens` for Search and Broad Search. Execution coverage is limited as recorded above. The archived [ChatGPT + TinyFish beginner walkthrough](https://github.com/goolamabbas/separate-intelligence-and-search/tree/main/archive/tinyfish-beginner) records a later, separate Search/Fetch run; the earlier absence observation is not a current availability claim.
 
 ## Exa Library — 10 November 2026 (0.6.0)
 
@@ -46,3 +46,8 @@ No configuration changes, paid research, Task jobs, BYOL calls or Index Partner 
 ## Parallel distinction clarification — 11 November 2026 (v0.7.1)
 
 Targeted wording update based on the previously reviewed discovery evidence. Only the Parallel reference changes operational guidance; skill version and release documentation are updated for packaging. Structural validation and release integrity are checked during publication. No new provider availability test or benchmark was run.
+
+
+## Provider scope removal — 11 November 2026 (v0.8.0)
+
+Removed Firecrawl and TinyFish from maintained routing and the installable references. Structural validation passed; the coordinated guide build, internal links, prompt payloads and starter filtering passed. No new live provider execution or independent behavioral evaluation was performed for this scope reduction. Historical observations above do not imply continued support. Release and installed file integrity are verified during publication.
