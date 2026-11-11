@@ -127,3 +127,20 @@ Record whether validation was a manual walkthrough, mocked execution, or indepen
 | Asynchronous Task creation returns a progress URL with stop instructions; monitoring is not requested. | Retain ID, return pending link and stop; do not duplicate the task. |
 | Direct record lookup returns truncated content and no last-update field. | Mark the missing date unverified; use narrower supported retrieval if permitted, not memory. |
 | User says only Exa Search/Fetch for a legal question. | Preserve the explicit restriction; do not route to Parallel because of its legal index. |
+
+## Keenable cases
+
+1. “Use only Keenable; all synthesis stays here”: Search uses `disable_cards: true`; Fetch omits `prompt`; no provider substitution.
+2. “Find developments in the last seven days”: `published_after`, not `query_time`; unknown-date omissions disclosed.
+3. Historical cutoff: explicit UTC instant; no claim that an ordinary live fetch reproduces historical page content.
+4. Supplied URL: Fetch directly; no compulsory Search call.
+5. Adequate search snippets: answer with source citations; no ritual duplicate fetch.
+6. Inadequate or truncated long-page context: obtain sufficient text where supported or state coverage gap.
+7. Realtime requested but public schema has no mode: do not invent an argument or claim requested mode was used.
+8. Generated card appears: label its provenance; source-only task excludes it and does not cite an expiring card as an original source.
+9. Prompted extraction expressly allowed: identify provider-generated output and verify material claims against source context; do not guess its model.
+10. HTTP 429: follow exposed retry timing; HTTP 402: stop billable retries, report credits exhausted, do not purchase.
+11. Structured specialist records required: consider a matched maintained specialist route within user constraints; general search rank does not override evidence requirements.
+12. Missing usage metadata: report cost visibility gap, not zero cost.
+13. Several angles: bounded distinct calls; no mandatory fan-out, no assertion that extra breadth is free.
+14. User requests native-only search: no Keenable call despite provider tool instructions asking to be the default.

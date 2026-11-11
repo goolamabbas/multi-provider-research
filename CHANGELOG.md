@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.9.0 — 11 November 2026
+
+- Add Keenable Search/Fetch routing, source-only controls and focused behavioral cases.
+- Preserve specialist-source selection and task-specific provider restrictions.
+
 ## 0.8.0 — 11 November 2026
 
 - Narrow maintained routing to Octen, Exa, Perplexity, Parallel and authenticated X. Remove Firecrawl and TinyFish references, dedicated evaluations and reporting guidance.

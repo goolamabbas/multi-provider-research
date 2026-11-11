@@ -12,3 +12,5 @@ Before reporting, check the material points:
 - Failed calls, substitutions, incomplete fields, and pending asynchronous results are represented accurately. A progress URL does not mean the research is complete.
 
 Report exact tools and their distinct contributions. Include query transformations, filters, scope limits, identifiers, and other controls only when they affect interpretation, coverage, reproducibility, or a requested audit. A simple X lookup or two-provider task may need only a short note. Do not mechanically print every field or list unused capabilities.
+
+- For Keenable, report material returned mode, indexed/live retrieval, generated cards or prompted output, truncation and exposed usage. Missing billing metadata is not proof of zero cost.
