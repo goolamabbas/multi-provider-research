@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.7.1 — 11 November 2026
+
+- Clarify that Finance/Legal web-index improvements are separate from specialized dataset operations at the routing decision.
+- Require a suitable live discovery match before assuming a finance/legal dataset operation exists; scope missing matches to the observed check.
+
 ## 0.7.0 — 11 November 2026
 
 - Route relevant evidence through web retrieval, specialized records or permitted research; distinguish included partners, selected connectors and BYOL access.

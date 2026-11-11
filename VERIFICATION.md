@@ -41,3 +41,8 @@ Current unified MCP and Data Connectors docs were retrieved through Parallel Fet
 find_verticals returned clinical_trials.get_trial_details with a required nct_id and $0 price. One search_vertical lookup for NCT04280705 returned the identifier, title, completed status and official registry citation, with cost_usd 0. The response was truncated: last-update date and completeness were not verified. This tests one direct-record path, not all verticals or research connectors.
 
 No configuration changes, paid research, Task jobs, BYOL calls or Index Partner attribution tests were performed. Connector overrides and entitlement behavior are documented, not executed. Manual behavioral cases are consistency checks, not independent model evaluations. Benchmark claims were not reproduced. These checks preceded the authorized v0.7.0 publication and personal installation.
+
+
+## Parallel distinction clarification — 11 November 2026 (v0.7.1)
+
+Targeted wording update based on the previously reviewed discovery evidence. Only the Parallel reference changes operational guidance; skill version and release documentation are updated for packaging. Structural validation and release integrity are checked during publication. No new provider availability test or benchmark was run.
