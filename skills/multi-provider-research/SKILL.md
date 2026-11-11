@@ -2,7 +2,7 @@
 name: multi-provider-research
 description: "Route research using Octen, Exa, Perplexity, Parallel, Firecrawl, TinyFish, or X-native tools. Use for research through a named provider, specialized datasets, batch enrichment, site extraction, or browser-based evidence gathering. Skip native-only research and tasks that merely mention a provider."
 metadata:
-  version: "0.6.0"
+  version: "0.7.0"
 ---
 
 # Multi-provider research
@@ -14,7 +14,7 @@ Use the minimum sufficient set of available providers. Give each a distinct evid
 - Apply explicit provider inclusions or exclusions, then named-provider requests, then a materially matched specialized dataset, then a generic discovery default. Naming a provider requires its contribution to the requested role, not exclusivity. Honor “only,” “exactly,” and equivalent restrictions. Explicit native-only instructions override external routing even if this skill was loaded automatically.
 - Native search and page reading are allowed when useful and not excluded by the user. They must not bypass a required provider, an exclusive tool set, or a specialized evidence requirement. “Only Exa Search and Fetch” excludes native tools; “Exa as the only external discovery provider” permits native page reading, but not native discovery. Reuse sufficient source content instead of opening it again solely to verify a citation.
 - Default ordinary lookups to retrieval and synthesis by the current assistant. Use provider-generated research or enrichment when the requested outcome warrants it and restrictions permit it. Ask only when an unresolved boundary materially affects scope, cost, or data handling; existing authorization continues to apply.
-- Classify operations and output options, not just tool names. Under assistant-only synthesis, avoid provider-generated answers, summaries, reasoning, and agent operations, including Connect through Exa Agent. Source retrieval, ranking, and faithful extraction may use internal machine learning; this restriction does not guarantee model-free processing. A provider call does not imply use of the assistant's selected model.
+- Classify operations and output options, not just tool names. Under assistant-only synthesis, avoid provider-generated answers, summaries, reasoning, and agent operations, including Connect through Exa Agent and Parallel web_research, Decisions and Task workflows. Source retrieval, ranking, and faithful extraction may use internal machine learning; this restriction does not guarantee model-free processing. A provider call does not imply use of the assistant's selected model.
 - Research is read-only unless the user explicitly authorizes the corresponding action. Persistent website actions and recurring checks require authorization for those outcomes. Provider installation or availability alone is not authorization.
 
 ## Choose and execute
@@ -25,9 +25,9 @@ Read only the references relevant to the requested evidence and selected provide
 | --- | --- |
 | Destination URL lookup, focused web/news discovery, or multi-angle discovery with Octen | [Octen](references/octen.md) |
 | Semantic discovery, Library collections and structured source records, search categories, or Exa Agent research and enrichment, including optional Ultra effort | [Exa](references/exa.md) |
-| Specialized or comparable fields across entities, dated records, or structured datasets | [Exa Library and Connect selection](references/exa.md#library-or-connect) or [Firecrawl Alexandria](references/firecrawl.md#alexandria), according to required fields, provenance, coverage and cost; sufficient search or supplied records may already satisfy the task |
+| Specialized or comparable fields across entities, dated records, or structured datasets | [Exa Library and Connect selection](references/exa.md#library-or-connect), [Parallel specialized sources](references/parallel.md), or [Firecrawl Alexandria](references/firecrawl.md#alexandria), according to required fields, provenance, coverage and cost; sufficient search or supplied records may already satisfy the task |
 | Perplexity retrieval or permitted cited analysis | [Perplexity](references/perplexity.md) |
-| Parallel discovery, source excerpts, deep reports, or repeated batch fields | [Parallel](references/parallel.md) |
+| Parallel web evidence, financial/legal sources, specialized records, permitted research or repeated batch fields | [Parallel](references/parallel.md) |
 | Site URL inventory, bounded crawling, document parsing, or structured webpage extraction | [Firecrawl](references/firecrawl.md) |
 | Focused browser-rendered reading or user-directed browser interaction | [TinyFish](references/tinyfish.md) |
 | X posts, Articles, accounts, timelines, bookmarks, engagement, search, counts, or trends | [X-native routing](references/x-routing.md) |

@@ -114,3 +114,26 @@ Record whether validation was a manual walkthrough, mocked execution, or indepen
 | “Compare this paper's methods with another.” One result has only an abstract. | Retrieve full text when possible; otherwise label the limitation and avoid unsupported method detail. |
 | A product result has a price but no live-price guarantee. | Preserve observation limits; verify the merchant page when a current price is required. |
 | The tool's category enum lacks podcast and its arguments lack contents. | Use supported collection filtering/content controls or disclose limitations; never invent arguments from direct-API examples. |
+
+## Parallel accessible-evidence cases
+
+| Request and fixture | Expected observable behavior |
+| --- | --- |
+| A user asks for a trial registration by NCT ID without naming a dataset; vertical discovery is available. | Discover a matching record lookup, inspect its schema/price, retrieve and cite the registry record; no mandatory web-search detour. |
+| Relevant vertical ID is returned without a schema. | Refine discovery before execution; do not guess arguments. |
+| Retrieval-only request; matching vertical performs endpoint analysis. | Use a faithful record operation if available, or report the gap; do not assume every vertical is retrieval. |
+| Search returns session_id but accepts only objective and queries. | Omit session_id on the next call; no invented metadata or memory guarantee. |
+| Finance question needs comparable quarterly numbers; web evidence mixes years and units. | Seek matching periods/units and source tables, check amendments, and use suitable structured records if needed and permitted. |
+| Legal search metadata conflicts with an opinion's date; returned passage is a dissent. | Preserve the source date and dissent attribution; do not call it the holding or proof of current validity. |
+| User restricts all retrieval to specified domains; no enforceable policy is available. | Stop that restricted retrieval and explain the configuration gap; no site-query workaround. |
+| Permitted research would benefit from retail observations and an eligible Index Partner could help. | Describe required entities/fields/dates; do not place the partner in data_sources or claim it contributed without evidence. |
+| Retrieval-only request would benefit from an Index Partner reachable only through research. | Stay within permitted retrieval, disclose the evidence gap; no research escalation. |
+| Research connector is selected but no call appears in the returned call record. | Report enabled, not invoked; do not attribute supporting evidence to that connector. |
+| Research schema lacks data_sources but connection configuration supports it. | Explain the authenticated configuration route; do not invent a tool argument or silently change settings. |
+| Explicit free research connector selection with low effort. | Use supported medium/high effort only within authorization and budget, or report the incompatible setup. |
+| Paid connector matches but price or entitlement is unresolved. | Resolve the material access/cost gap before execution; catalogue presence alone is insufficient. |
+| BYOL source is documented but no license/interface is available. | Report that specific gap without assuming a funded account grants access. |
+| web_research returns a completed answer and response ID. | Inspect answer/citations and report completion; do not stop at a pending handoff or poll. |
+| Asynchronous Task creation returns a progress URL with stop instructions; monitoring is not requested. | Retain ID, return pending link and stop; do not duplicate the task. |
+| Direct record lookup returns truncated content and no last-update field. | Mark the missing date unverified; use narrower supported retrieval if permitted, not memory. |
+| User says only Exa Search/Fetch for a legal question. | Preserve the explicit restriction; do not route to Parallel because of its legal index. |

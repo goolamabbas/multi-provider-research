@@ -33,3 +33,11 @@ Structural validation passed with the skill-creator validator in an isolated PyY
 The preceding documentation review executed one podcast-scoped Exa Advanced Search and one episode Fetch, returning episode pages and a timestamped, speaker-labelled transcript excerpt. This demonstrates that path only, not improved retrieval quality or performance of the revised skill. No Places, partner-data or Agent scenario was executed. The Library homepage failed in Exa Fetch; Parallel supplied it, and direct HTTPS checks confirmed key Places and podcast limitations. Sources: https://exa.ai/library ; https://exa.ai/library/place ; https://exa.ai/library/podcast .
 
 No release or personal installation was performed. Version metadata remains at the existing release pending approval.
+
+## Parallel coordinated draft — 11 November 2026
+
+Current unified MCP and Data Connectors docs were retrieved through Parallel Fetch; Search supplied the official Finance announcement. Earlier same-day legal review retrieved the Legal announcement and tested primary-source discovery. Callable Search/Fetch, Research and vertical schemas were inspected. Search/Fetch did not accept session or client-model fields; Research did not expose data_sources.
+
+find_verticals returned clinical_trials.get_trial_details with a required nct_id and $0 price. One search_vertical lookup for NCT04280705 returned the identifier, title, completed status and official registry citation, with cost_usd 0. The response was truncated: last-update date and completeness were not verified. This tests one direct-record path, not all verticals or research connectors.
+
+No configuration changes, paid research, Task jobs, BYOL calls or Index Partner attribution tests were performed. Connector overrides and entitlement behavior are documented, not executed. Manual behavioral cases are consistency checks, not independent model evaluations. Benchmark claims were not reproduced. These checks preceded the authorized v0.7.0 publication and personal installation.

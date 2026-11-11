@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.7.0 — 11 November 2026
+
+- Route relevant evidence through web retrieval, specialized records or permitted research; distinguish included partners, selected connectors and BYOL access.
+- Update unified MCP controls, conditional metadata, source verification and operation lifecycles.
+- Add focused behavioral cases and dated live-test limits.
+
+
 ## 0.6.0 — 10 November 2026
 
 - Distinguish Exa Library records, search categories and Connect partners; select by evidence requirements without mandatory Search-first escalation.
