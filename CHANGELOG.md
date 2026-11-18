@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.10.1 — 18 November 2026
+
+- Explicitly disable default-on provider-generated synthesis, including Octen News storylines.
+- Correct Keenable MCP Fetch defaults and public-suffix exclusions.
+- Document Octen entity-count limits and metric provenance, distinguish content allowances by plan, and include Parallel image discovery.
+
 ## 0.10.0 — 11 November 2026
 
 - Cover nine Octen operations with task-based routing, source-only output controls, card/filter provenance boundaries and conditional Video access.

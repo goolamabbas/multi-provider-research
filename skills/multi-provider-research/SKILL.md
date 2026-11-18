@@ -2,7 +2,7 @@
 name: multi-provider-research
 description: "Route research using Octen, Keenable, Exa, Perplexity, Parallel, or X-native tools. Use for research through a named provider, specialized datasets, batch enrichment, or source retrieval. Skip native-only research and tasks that merely mention a provider."
 metadata:
-  version: "0.10.0"
+  version: "0.10.1"
 ---
 
 # Multi-provider research
@@ -16,7 +16,7 @@ Use the minimum sufficient set of available providers. Give each a distinct evid
 - Apply explicit provider inclusions or exclusions, then named-provider requests, then a materially matched specialized dataset, then a generic discovery default. Naming a provider requires its contribution to the requested role, not exclusivity. Honor “only,” “exactly,” and equivalent restrictions. Explicit native-only instructions override external routing even if this skill was loaded automatically.
 - Native search and page reading are allowed when useful and not excluded by the user. They must not bypass a required provider, an exclusive tool set, or a specialized evidence requirement. “Only Exa Search and Fetch” excludes native tools; “Exa as the only external discovery provider” permits native page reading, but not native discovery. Reuse sufficient source content instead of opening it again solely to verify a citation.
 - Default ordinary lookups to retrieval and synthesis by the current assistant. Use provider-generated research or enrichment when the requested outcome warrants it and restrictions permit it. Ask only when an unresolved boundary materially affects scope, cost, or data handling; existing authorization continues to apply.
-- Classify operations and output options, not just tool names. Under assistant-only synthesis, avoid provider-generated answers, summaries, reasoning, and agent operations, including Keenable generated cards and prompted Fetch, Connect through Exa Agent and Parallel web_research, Decisions and Task workflows. Source retrieval, ranking, and faithful extraction may use internal machine learning; this restriction does not guarantee model-free processing. A provider call does not imply use of the assistant's selected model.
+- Classify operations and output options, not just tool names. Under assistant-only synthesis, avoid provider-generated answers, summaries, reasoning, and agent operations, including Octen News storylines, Keenable generated cards and prompted Fetch, Connect through Exa Agent and Parallel web_research, Decisions and Task workflows. Disable generated output enabled by default using supported controls; report unavailable controls and use another permitted source-content operation when sufficient. Source retrieval, ranking, and faithful extraction may use internal machine learning; this restriction does not guarantee model-free processing. A provider call does not imply use of the assistant's selected model.
 - Research is read-only unless the user explicitly authorizes the corresponding action. Persistent website actions and recurring checks require authorization for those outcomes. Provider installation or availability alone is not authorization.
 
 ## Choose and execute

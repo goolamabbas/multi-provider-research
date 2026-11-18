@@ -1,5 +1,15 @@
 # Historical verification log
 
+## 18 November 2026 — v0.10.1 validation
+
+- Reviewed the changed synthesis rule and Keenable, Octen and Parallel references alongside the coordinated guide corrections. Checked affected standalone prompts without relying on skill instructions; added default-on controls to the skill-free starter and unavailable-control handling to the Octen pair prompts.
+- Skill frontmatter validation passed using the skill-creator validator with isolated PyYAML. Reference targets and version/download-link consistency were checked; both repository whitespace checks passed.
+- Rebuilt the dedicated release ZIP with `scripts/package-release.py`; ZIP integrity, checksum, complete inventory and source bytes were verified.
+- Coordinated guide build and JavaScript syntax checks passed. Existing cookbook checks passed for 65 indexed patterns, four starters, six additional Octen patterns, and seven connection block labels.
+- Headless Chrome on macOS verified installation and ordinary-example copy feedback with clipboard readback (terminal newline normalization allowed), simulated clipboard-denial selection/fallback, 54 correctly placed template labels, and mobile keyboard navigation at 390 × 844. Both mobile navigation landmarks were labelled and current-page state was present. Fixed cookbook table overflow using the existing keyboard-scrollable table wrapper; the viewport check then passed. No page errors were observed.
+- The earlier preparation session could not reach GitHub or bind a preview server. This publication session successfully checked GitHub main/tag state and served a local preview using its authorized permissions.
+- These checks are static validation and browser interaction checks, not new live provider tests or independent model evaluations. Release, deployment and installed-file evidence is recorded separately after publication; this pre-publication log does not claim those steps were already complete.
+
 These observations were moved from provider references in v0.4.2. They are historical records, not current availability, pricing, or performance guarantees. This packaging release did not repeat the provider checks. Operational decisions use the live schema and applicable current terms.
 
 ## Exa Ultra — 26 September 2026

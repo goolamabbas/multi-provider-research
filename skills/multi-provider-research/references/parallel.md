@@ -2,6 +2,8 @@
 
 Read for objective-shaped web evidence, financial/legal sources, specialized records or permitted Parallel research. Inspect the relevant live tools; the unified MCP can expose retrieval, vertical discovery/querying and authenticated same-call research. Task/API/CLI workflows have separate capabilities and lifecycles.
 
+When exposed, `image_search` returns image URLs and source-page links without visual descriptions. Inspect images before making visual claims. Keyless connections use `fast` mode; `advanced` requires authentication.
+
 ## Choose relevant accessible evidence
 
 Finance/Legal releases upgrade the index and ranking behind existing web APIs; they are separate from specialized dataset operations discovered through `find_verticals` and executed through `search_vertical`. Do not invent domain tools, categories or account entitlements, or assume a finance/legal dataset operation exists. Use one only when live discovery returns a suitable match. A discovery response with no match establishes a gap in that check, not universal unavailability.
