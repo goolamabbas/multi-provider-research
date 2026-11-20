@@ -24,7 +24,7 @@ Use `published_after` / `published_before` for publication windows. Publication 
 
 Use `query_time` only for a point-in-time index query. `query_time: "7d"` means as of seven days ago, not the last seven days. For a past interval, use explicit dates/timestamps: relative filters still count back from request time. A date-only `query_time` resolves to midnight UTC; date-only ordinary before bounds cover the full UTC day. Do not promise historical page-body reconstruction from an ordinary Fetch or claim a complete record of what was publicly knowable.
 
-`site` restricts one site; supported query operators may target several. `exclude_domains` accepts host names including subdomains and leading-dot public suffixes such as `.gov`. Paths, bare suffixes and host wildcards are unsupported. Check results against actual user restrictions; a filter is not a source-quality guarantee.
+`site` restricts one site; supported query operators may target several. `exclude_domains` accepts a host and covers its subdomains. [Keenable documents](https://docs.keenable.ai/products/search) leading-dot public suffixes, but the MCP rejected `.gov` with `invalid_parameter` on 20 November 2026 and accepted `nasa.gov`. Paths, bare suffixes and host wildcards are unsupported. If the search itself must exclude an entire suffix and the runtime rejects it, use another permitted route that enforces the restriction or report the gap. A list of individual hosts cannot enforce a suffix-wide exclusion. If the restriction applies only to sources cited in the answer, check the returned URLs before citing them. Check results against actual user restrictions; a filter is not a source-quality guarantee.
 
 ## Fetch
 

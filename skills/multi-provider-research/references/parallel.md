@@ -1,8 +1,8 @@
 # Parallel
 
-Read for objective-shaped web evidence, financial/legal sources, specialized records or permitted Parallel research. Inspect the relevant live tools; the unified MCP can expose retrieval, vertical discovery/querying and authenticated same-call research. Task/API/CLI workflows have separate capabilities and lifecycles.
+Read for text-based image discovery, objective-shaped web evidence, financial/legal sources, specialized records or permitted Parallel research. Inspect the relevant live tools; the unified MCP can expose retrieval, vertical discovery/querying and authenticated same-call research. Task/API/CLI workflows have separate capabilities and lifecycles.
 
-When exposed, `image_search` returns image URLs and source-page links without visual descriptions. Inspect images before making visual claims. Keyless connections use `fast` mode; `advanced` requires authentication.
+Use `image_search` for images described in words. Supply short keyword queries and a visual objective, such as an official logo for a presentation. The checked MCP tool requires both inputs. For a supplied reference image, consider Octen when available and permitted. Keep the direct image URL and source-page URL together. Titles and available dimensions help select candidates. Inspect the image before describing it and check the source for attribution or reuse terms when relevant. Keyless MCP connections use `fast` mode. Authenticated users can select `advanced`. [Images API quickstart](https://docs.parallel.ai/image-search/image-search-quickstart)
 
 ## Choose relevant accessible evidence
 

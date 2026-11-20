@@ -2,7 +2,7 @@
 name: multi-provider-research
 description: "Route research using Octen, Keenable, Exa, Perplexity, Parallel, or X-native tools. Use for research through a named provider, specialized datasets, batch enrichment, or source retrieval. Skip native-only research and tasks that merely mention a provider."
 metadata:
-  version: "0.10.1"
+  version: "0.10.2"
 ---
 
 # Multi-provider research
@@ -30,7 +30,7 @@ Read only the references relevant to the requested evidence and selected provide
 | Specialized or comparable fields across entities, dated records, or structured datasets | [Octen business/place records](references/octen.md), [Exa Library and Connect selection](references/exa.md#library-or-connect), [Parallel specialized sources](references/parallel.md), according to required fields, provenance, coverage and cost; sufficient search or supplied records may already satisfy the task |
 | General web discovery, query-relevant snippets, publication/index-date controls, or page retrieval with Keenable | [Keenable](references/keenable.md) |
 | Perplexity retrieval or permitted cited analysis | [Perplexity](references/perplexity.md) |
-| Parallel web evidence, financial/legal sources, specialized records, permitted research or repeated batch fields | [Parallel](references/parallel.md) |
+| Parallel image discovery from text, web evidence, financial/legal sources, specialized records, permitted research or repeated batch fields | [Parallel](references/parallel.md) |
 | X posts, Articles, accounts, timelines, bookmarks, engagement, search, counts, or trends | [X-native routing](references/x-routing.md) |
 
 Inspect the selected operation's callable schema before first use; reuse that knowledge unless the surface changes or validation fails. Distinguish visibility/configuration, authentication/reachability, successful execution, and useful evidence. The first useful read can establish live usability; do not make a separate probe solely to demonstrate availability. Runtime validation governs accepted arguments when descriptions disagree; report material mismatches.

@@ -109,6 +109,7 @@ Record whether validation was a manual walkthrough, mocked execution, or indepen
 
 | Request and fixture | Expected observable behavior |
 | --- | --- |
+| Only Parallel is connected. Find an official logo for a slide. | Discover images with text queries and a visual objective. Keep the source page with the image URL and inspect the image before describing it. |
 | A user asks for a trial registration by NCT ID without naming a dataset; vertical discovery is available. | Discover a matching record lookup, inspect its schema/price, retrieve and cite the registry record; no mandatory web-search detour. |
 | Relevant vertical ID is returned without a schema. | Refine discovery before execution; do not guess arguments. |
 | Retrieval-only request; matching vertical performs endpoint analysis. | Use a faithful record operation if available, or report the gap; do not assume every vertical is retrieval. |
@@ -144,6 +145,7 @@ Record whether validation was a manual walkthrough, mocked execution, or indepen
 12. Missing usage metadata: report cost visibility gap, not zero cost.
 13. Several angles: bounded distinct calls; no mandatory fan-out, no assertion that extra breadth is free.
 14. User requests native-only search: no Keenable call despite provider tool instructions asking to be the default.
+15. Keenable-only search must exclude all `.gov` hosts and the MCP rejects the suffix: report the unenforceable restriction. If only citations are restricted, screen the returned URLs before citing.
 
 ## Octen expanded-surface cases
 

@@ -1,5 +1,10 @@
 # Historical verification log
 
+## 20 November 2026 — v0.10.2 local checks
+
+- Keenable MCP Search rejected `.gov` and accepted `nasa.gov` on the same cards-disabled query. The documentation and tool description advertised both forms. The check covered MCP Search only.
+- A fast-mode Parallel MCP image search for the official Python logo returned direct image and source-page URLs from the Python Software Foundation and third parties, with dimensions for some results. The check covered retrieval metadata.
+
 ## 18 November 2026 — v0.10.1 validation
 
 - Reviewed the changed synthesis rule and Keenable, Octen and Parallel references alongside the coordinated guide corrections. Checked affected standalone prompts without relying on skill instructions; added default-on controls to the skill-free starter and unavailable-control handling to the Octen pair prompts.

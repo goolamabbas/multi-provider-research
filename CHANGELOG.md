@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.10.2 — 20 November 2026
+
+- Document the observed Keenable MCP suffix-exclusion error and how to preserve a required domain restriction.
+- Route text-based image discovery to Parallel and explain how to request and attribute image results.
+- Clarify the checksum check and project or personal scope for manual installation.
+
 ## 0.10.1 — 18 November 2026
 
 - Explicitly disable default-on provider-generated synthesis, including Octen News storylines.
