@@ -31,6 +31,10 @@ Use Particle through Agent when additional analytics or structured provider fiel
 
 Official references: [Search modes and controls](https://exa.ai/docs/search/quickstart), [warnings and legacy parameters](https://exa.ai/docs/changelog), and [podcast retrieval](https://exa.ai/library/podcast).
 
+For flight status or airport boards, look for a structured result in ordinary Search. Specify airline, flight number, departure date and leg or airports as applicable. Confirm the matched leg and local times. Preserve scheduled, estimated and actual times separately and inspect freshness before making a status claim. For fare quotes, choose a suitable exposed offer lookup. [Exa Flights](https://exa.ai/blog/flights)
+
+For a quote or recent price history, check whether Search supplies the requested instrument, venue or quote currency, timestamp and fields. Retain their source and distinguish observable market data from inferred values. Consider Connect for partner-specific provenance or unresolved fields within the user's scope. [Financial Markets](https://exa.ai/docs/search/data/financial)
+
 ### Library or Connect
 
 Choose by required fields, period, comparability, provenance and coverage, not topic alone. Use sufficient Library/search evidence when it meets the request. Select a matching partner directly when its distinct fields are required or explicitly requested; do not force a preliminary Search call. Structured records alone do not require Agent or Connect, and Library fields are not automatically equivalent to a named partner's data. Respect explicit provider and synthesis restrictions.

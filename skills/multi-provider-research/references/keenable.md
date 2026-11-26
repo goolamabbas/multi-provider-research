@@ -6,6 +6,8 @@ Use for general web discovery, query-relevant passages from long documents, publ
 
 The MCP normally exposes `search_web_pages` and `fetch_page_content`; SDK/API names and options differ. Inspect the callable schema. Some public MCP endpoints omit `mode`. Do not invent unsupported parameters, operator `_meta` overrides or experimental API tools.
 
+Keep search queries and objectives to the public facts necessary for the lookup. Keenable describes using search trajectories to improve retrieval. Check the terms applicable to the connection before sending sensitive material. [Use of search trajectories](https://keenable.ai/blog/trajectories-in-improvements-out)
+
 ## Search and source boundaries
 
 Describe the page and evidence that would answer the question. Use a focused query; split genuinely independent aspects when necessary, with bounded concurrency and no duplicate reads. Start with a modest result count and adequate snippet context; expand for material evidence gaps, not provider coverage.

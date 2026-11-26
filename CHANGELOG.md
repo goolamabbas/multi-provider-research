@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.11.0 — 26 November 2026
+
+- Add Perplexity Context for URL reading and point-in-time retrieval when available and permitted.
+- Route Parallel fare and product lookups by connector capability, and clarify primary healthcare retrieval and trial registry access.
+- Prefer a suitable read-only X MCP connection, extend Exa flight and market data routing, and clarify what to send to Keenable Search.
+
 ## 0.10.2 — 20 November 2026
 
 - Document the observed Keenable MCP suffix-exclusion error and how to preserve a required domain restriction.

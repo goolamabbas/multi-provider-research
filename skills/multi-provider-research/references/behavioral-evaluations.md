@@ -57,7 +57,7 @@ Use only when maintaining the skill. Exercise each case with mocked tools or a d
 | A polling call times out after returning an active run ID. | Resume the same run; do not create a duplicate or treat the timeout as cancellation. |
 | “Expand this completed list within the authorized budget; exclude these rows.” Both `previousRunId` and input fields are available. | Use the completed ID as new-run context and `input.exclusion` for existing entities; use `input.data` only for rows to process. Account for the new run's cost and deduplicate returned entities. |
 
-## Perplexity Search type cases
+## Perplexity retrieval cases
 
 | Request and fixture | Expected observable behavior |
 | --- | --- |
@@ -68,6 +68,9 @@ Use only when maintaining the skill. Exercise each case with mocked tools or a d
 | “Use standard Perplexity Search for this routine lookup.” Both types are exposed. | Honor `search_type: "web"` despite the routine-task preference. |
 | “Use Fast Search and keep synthesis in this assistant.” Ask advertises the `fast` preset. | Select Search with `search_type: "fast"`, not Ask; retain assistant-side synthesis. |
 | A Fast Search call returns useful sources but no usage or backend telemetry. | Report the explicit request and successful result; do not claim independently verified billing or latency. |
+| “Read these two URLs using Context only.” One result succeeds and the other times out. | Reuse the successful page and retry only the timeout if useful. Omit scoring for assistant-side analysis. |
+| “Use only Perplexity Search.” A snippet is incomplete and Context is exposed. | Preserve Search-only scope and report any unresolved evidence gap. |
+| A historical comparison needs search discovery and an archived page. Context supports `snapshot_as_of`, but the Search wrapper does not. | Use a common cutoff wherever supported and report the restricted discovery gap. Use only permitted historical sources and never replace a missing archive with live content. |
 
 ## Comparison method
 

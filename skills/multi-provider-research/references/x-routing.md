@@ -5,7 +5,8 @@ Use this reference only when the requested evidence is native to X, including po
 ## Portable capability preflight
 
 - Treat live callable commands and tool schemas as the source of truth. A configured client, documented endpoint, or documentation MCP does not prove authenticated X data access.
-- Prefer xurl as the default read interface when it is installed and authenticated.
+- When using the official X MCP for research, prefer an already configured read-only connection if it covers the required fields and scopes. For setup advice, X documents `https://api.x.com/mcp?read_only=true`, which hides write tools and rejects write calls. Read scopes still apply. [X MCP documentation](https://docs.x.com/tools/mcp)
+- Use xurl as the default read interface when installed and authenticated and no suitable read-only MCP route is already configured.
 - Prefer an authenticated X API MCP when its dedicated structured tool better fits the request, such as archive search, user or news search, counts, trends, or bookmark folders, or when xurl is unavailable.
 - Capability names and coverage vary across harnesses. Select by task semantics and inspected schema rather than hard-coded tool names.
 - Treat xurl and an X API MCP as alternative interfaces, not independent sources. Use both for the same query only when the user requests cross-validation or the second interface can materially verify or complete the first.

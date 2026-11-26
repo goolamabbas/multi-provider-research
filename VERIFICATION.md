@@ -1,5 +1,11 @@
 # Historical verification log
 
+## 26 November 2026 — v0.11.0 validation
+
+- Perplexity Context returned successful results for two live documentation URLs and two archived copies at the requested cutoff. The checked Search wrapper lacked the historical cutoff argument.
+- One Exa Advanced Search returned a structured Library result with two legs sharing a flight number. The Parallel plugin's fare and product operations were verified at schema level. The X read-only setup and Keenable data-handling guidance were checked against official sources.
+- The guide build and local HTML anchors passed. The skill passed frontmatter and reference-link validation. The Context behavioral cases are evaluation fixtures for subsequent agent testing.
+
 ## 20 November 2026 — v0.10.2 local checks
 
 - Keenable MCP Search rejected `.gov` and accepted `nasa.gov` on the same cards-disabled query. The documentation and tool description advertised both forms. The check covered MCP Search only.
