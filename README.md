@@ -1,6 +1,6 @@
 # Multi-provider research
 
-Version **0.11.0** · [Changelog](CHANGELOG.md) · [Historical verification log](VERIFICATION.md)
+Version **0.11.1** · [Changelog](CHANGELOG.md) · [Historical verification log](VERIFICATION.md)
 
 A portable research-routing skill for AI agents. It selects the smallest useful set of available research providers, respects provider and synthesis restrictions, verifies source evidence, and reports material gaps.
 
@@ -20,7 +20,7 @@ Inside a project, this defaults to installation for that project. Add “for all
 
 ### Manual installation
 
-1. Download [multi-provider-research-v0.11.0.zip](https://github.com/goolamabbas/multi-provider-research/releases/download/v0.11.0/multi-provider-research-v0.11.0.zip) from the [release](https://github.com/goolamabbas/multi-provider-research/releases/tag/v0.11.0). Download `SHA256SUMS` from the same release and verify the ZIP’s SHA-256 against its entry before extracting.
+1. Download [multi-provider-research-v0.11.1.zip](https://github.com/goolamabbas/multi-provider-research/releases/download/v0.11.1/multi-provider-research-v0.11.1.zip) from the [release](https://github.com/goolamabbas/multi-provider-research/releases/tag/v0.11.1). Download `SHA256SUMS` from the same release and verify the ZIP’s SHA-256 against its entry before extracting.
 2. Extract the ZIP. Its single top-level folder is `multi-provider-research/`, containing `SKILL.md`, `references/`, and `agents/`.
 3. Copy the entire folder into your application’s project skills directory for use in this project, or its personal skills directory for use across projects. Consult your application's current instructions for its skills directory and discovery behavior.
 4. Start a fresh task or reload skills as your application requires.

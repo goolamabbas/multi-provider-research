@@ -1,17 +1,24 @@
 # Parallel
 
-Read for text-based image discovery, flight fares, product offers, primary web evidence, specialized records or permitted Parallel research. The hosted MCP can expose retrieval, vertical discovery/querying and authenticated same-call research. Check the callable tools of the selected connection. Task/API/CLI workflows have separate capabilities and lifecycles.
+Read for primary web evidence, image discovery, flight fares, product offers, supported dataset lookups or permitted Parallel research.
 
-Use `image_search` for images described in words. Supply short keyword queries and a visual objective, such as an official logo for a presentation. The checked MCP tool requires both inputs. For a supplied reference image, consider Octen when available and permitted. Keep the direct image URL and source-page URL together. Titles and available dimensions help select candidates. Inspect the image before describing it and check the source for attribution or reuse terms when relevant. Keyless MCP connections use `fast` mode. Authenticated users can select `advanced`. [Images API quickstart](https://docs.parallel.ai/image-search/image-search-quickstart)
+## Identify the active connection
 
-Use dedicated flight or product search when exposed and it fits the requested evidence, such as fare options for a dated itinerary or product offers in a specified market. The ChatGPT plugin can expose these operations. Verify itinerary or product variant, market, currency, availability and observation time, and include the booking or seller source if returned. Keep offer discovery read-only. For flight status, use a source that supplies operational data. [Parallel plugin](https://openai.com/business/plugins/parallel-search/)
+- **Parallel app in ChatGPT.** Recommend the app first to ChatGPT desktop users who want straightforward Search and Fetch setup. Check what the app exposes in the current chat. A Codex chat in ChatGPT desktop ran dedicated fare and product searches through the app on 26 November 2026. Treat availability in other chats and clients as something to verify. [Parallel app listing](https://openai.com/business/plugins/parallel-search/)
+- **Direct hosted MCP.** Recommend `https://mcp.parallel.ai/mcp` when a needed operation or configuration is missing from the app and the client supports the setup. The quickstart explains the core web tools in its table and names `find_verticals` and `search_vertical` in its default listing. The anonymous endpoint listed both dataset tools on 26 November 2026. The docs require authentication for same-call Research. Verify the callable tools, inputs and access on the selected connection. [Hosted MCP quickstart](https://docs.parallel.ai/integrations/mcp/quickstart)
+
+Report the connection that supplied the result. A separately configured server can be disabled while the app supplies its own tools. Task, API and CLI interfaces have their own capabilities and lifecycles.
+
+Use the Images API or its `image_search` tool on a connection that exposes it for images described in words. Supply short keyword queries and a visual objective, such as an official logo for a presentation. The checked MCP tool requires both inputs. For a supplied reference image, consider Octen when available and permitted. Keep the direct image URL and source-page URL together. Titles and available dimensions help select candidates. Inspect the image before describing it and check the source for attribution or reuse terms when relevant. Keyless MCP connections use `fast` mode. Authenticated users can select `advanced`. [Images API quickstart](https://docs.parallel.ai/image-search/image-search-quickstart)
+
+Use dedicated flight or product search when exposed and it fits the requested evidence, such as fare options for a dated itinerary or product offers in a specified market. Verify itinerary or product variant, market, currency, availability and observation time, and include the booking or seller source if returned. Keep offer discovery read-only. For flight status, use a source that supplies operational data. [Parallel plugin](https://openai.com/business/plugins/parallel-search/)
 
 ## Choose relevant accessible evidence
 
-The finance, legal and healthcare releases improve index coverage or ranking for existing web APIs. For a reported trial outcome, inspect the underlying trial registry or paper. For exact registry fields, there may be a separate dataset operation discoverable through `find_verticals` and executable through `search_vertical`. Do not invent domain tools, categories or account entitlements, or assume a finance/legal dataset operation exists. Use one only when live discovery returns a suitable match. A discovery response with no match establishes a gap in that check, not universal unavailability.
+The finance, legal and healthcare releases improve index coverage or ranking for existing web APIs. For a reported trial outcome, inspect the underlying trial registry or paper. For exact registry fields, look for a supported operation if the connection exposes both `find_verticals` and `search_vertical`. Do not invent domain tools, categories or account entitlements, or assume a finance/legal dataset operation exists. Use one only when live discovery returns a suitable match. A discovery response with no match establishes a gap in that check, not universal unavailability.
 
-- Start from the evidence needed, not a fixed Search-first sequence. Use web Search/Fetch for public passages. When structured records, coverage or field comparability materially matter, use `find_verticals`, inspect a matching operation, then `search_vertical`. Reuse sufficient supplied or retrieved evidence.
-- Discovery returns IDs, prices and schemas for best matches. If a relevant ID lacks its input schema, refine discovery. Use the returned contract rather than inventing parameters. Check coverage, provenance, output type and cost before execution. Some vertical operations perform analysis: classify the selected operation, not only the outer tool name, under assistant-only synthesis restrictions.
+- Start from the evidence needed, not a fixed Search-first sequence. Use web Search/Fetch for public passages. When structured records, coverage or field comparability materially matter, discover a suitable operation with `find_verticals` and use `search_vertical` if the schema, access and cost fit. When those tools are absent, explain the access gap and use sufficient public sources if the task permits. Reuse sufficient supplied or retrieved evidence.
+- Check the discovered operation’s ID, input schema and price. The quickstart gives limited detail on individual dataset operations. A candidate may appear without its schema, as the trial-details candidate did on 26 November 2026. Refine discovery before calling it. Use the parameters returned for the selected operation. Check coverage, provenance, output type and cost before execution. Some vertical operations perform analysis: classify the selected operation, not only the outer tool name, under assistant-only synthesis restrictions.
 - Consider relevant included Index Partner evidence during an eligible, permitted Task/Responses research operation. Shape the request around required records, fields, entities, dates and geography. Parallel selects partners automatically; never name an Index Partner in `data_sources`. Availability varies by partner and processor. Do not escalate retrieval-only work to provider research just to access a partner.
 - Selected research connectors use `data_sources.free` or `data_sources.pay_per_use` through a supporting interface/configuration. Free connector calls have no connector charge, but research may still be billed. Paid calls add charges and can repeat. Responses connector selection requires medium/high effort and organization access. Inspect actual connector calls and supporting citations: enabled is not invoked, and invoked is not proof of a useful contribution.
 - BYOL/private sources require their own license, credentials and supported Task/Responses integration. Respect data-sharing constraints: sources in a run may receive information obtained from other sources. Do not place secrets in prompts or public configuration examples.
@@ -29,7 +36,7 @@ For financial evidence preserve entity IDs, periods, currency/units, filing date
 
 ## Connection controls
 
-Use the current schema, not direct API examples, for tool arguments. The unified MCP documents authenticated `x-parallel-mcp-config` overrides and `model_choice` exposure. An override applies last and fixes that API field; `model_choice` exposes supported fields to the agent. A `tools` URL list replaces defaults. Configuration changes require the user's authorization for that change; otherwise explain the missing route.
+Use the current schema, not direct API examples, for tool arguments. The direct hosted MCP documents authenticated `x-parallel-mcp-config` overrides and `model_choice` exposure. An override applies last and fixes that API field; `model_choice` exposes supported fields to the agent. A `tools` URL list replaces defaults. Configuration changes require the user's authorization for that change; otherwise explain the missing route.
 
 Source preferences belong in the objective. Required domain/path restrictions need a supported hard source policy or verified connection override. A site query or citation filter is not equivalent. If required enforcement is unavailable, stop the restricted retrieval and report the gap. Avoid publication-date filters that discard still-applicable authority. Do not treat prompt wording as an enforced budget.
 
@@ -47,7 +54,7 @@ Name exact operations and useful source roles. Preserve record IDs, citations an
 
 ## Official references
 
-- [Unified MCP and configuration](https://docs.parallel.ai/integrations/mcp/quickstart)
+- [Direct hosted MCP and configuration](https://docs.parallel.ai/integrations/mcp/quickstart)
 - [Data connectors and access models](https://docs.parallel.ai/resources/data-connectors)
 - [Source Policy](https://docs.parallel.ai/resources/source-policy)
 - [Task MCP](https://docs.parallel.ai/integrations/mcp/task-mcp)
@@ -55,4 +62,4 @@ Name exact operations and useful source roles. Preserve record IDs, citations an
 - [Finance index announcement](https://parallel.ai/blog/parallel-for-finance)
 - [Legal index announcement](https://parallel.ai/blog/parallel-for-legal)
 
-Docs and selected schemas checked 11 November 2026; use current schemas and terms at execution. This is routing guidance, not a complete capability catalogue or an entitlement guarantee.
+Connection checks are dated above; use current schemas and terms at execution. This is routing guidance, not a complete capability catalogue or an entitlement guarantee.

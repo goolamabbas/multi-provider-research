@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.11.1 — 26 November 2026
+
+- Recommend the Parallel app for everyday Search and Fetch in ChatGPT desktop.
+- Distinguish app-specific fare and product search from the tool list on the direct hosted MCP.
+- Explain when to use the hosted dataset tools and how to handle a discovery result that omits its input schema.
+
 ## 0.11.0 — 26 November 2026
 
 - Add Perplexity Context for URL reading and point-in-time retrieval when available and permitted.

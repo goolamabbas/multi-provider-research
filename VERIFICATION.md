@@ -1,5 +1,11 @@
 # Historical verification log
 
+## 26 November 2026 — v0.11.1 validation
+
+- The Parallel app in a Codex chat in ChatGPT desktop returned 20 sample itineraries and two priced merchant listings through dedicated fare and product searches. The separate Codex MCP entry was disabled.
+- Anonymous discovery on the direct hosted Parallel MCP listed both dataset tools. A ClinicalTrials.gov catalog request surfaced a trial-details candidate whose input schema was missing in that response. This check covered discovery only.
+- The guide build, updated rendered setup and dataset guidance, and skill frontmatter and whitespace checks passed.
+
 ## 26 November 2026 — v0.11.0 validation
 
 - Perplexity Context returned successful results for two live documentation URLs and two archived copies at the requested cutoff. The checked Search wrapper lacked the historical cutoff argument.

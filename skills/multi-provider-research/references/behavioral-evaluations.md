@@ -114,6 +114,8 @@ Record whether validation was a manual walkthrough, mocked execution, or indepen
 | --- | --- |
 | Only Parallel is connected. Find an official logo for a slide. | Discover images with text queries and a visual objective. Keep the source page with the image URL and inspect the image before describing it. |
 | A user asks for a trial registration by NCT ID without naming a dataset; vertical discovery is available. | Discover a matching record lookup, inspect its schema/price, retrieve and cite the registry record; no mandatory web-search detour. |
+| The Parallel app exposes fare search and the separately configured hosted MCP is disabled. The user asks for fares. | Use the app’s dedicated operation when permitted. Attribute the result to the app connection. |
+| Only the Parallel app is callable and its tool list lacks dataset discovery and lookup. An exact structured record is required. | Report the missing operations. Use another permitted route only when it returns the requested kind of record. |
 | Relevant vertical ID is returned without a schema. | Refine discovery before execution; do not guess arguments. |
 | Retrieval-only request; matching vertical performs endpoint analysis. | Use a faithful record operation if available, or report the gap; do not assume every vertical is retrieval. |
 | Search returns session_id but accepts only objective and queries. | Omit session_id on the next call; no invented metadata or memory guarantee. |

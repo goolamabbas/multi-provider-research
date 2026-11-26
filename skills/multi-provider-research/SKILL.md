@@ -2,7 +2,7 @@
 name: multi-provider-research
 description: "Route research using Octen, Keenable, Exa, Perplexity, Parallel, or X-native tools. Use for research through a named provider, specialized datasets, batch enrichment, or source retrieval. Skip native-only research and tasks that merely mention a provider."
 metadata:
-  version: "0.11.0"
+  version: "0.11.1"
 ---
 
 # Multi-provider research
