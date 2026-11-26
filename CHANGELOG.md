@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.11.2 — 26 November 2026
+
+- Clarify when to use Parallel FindAll to build a new list of entities alongside the guidance for discovering and querying a specific data source.
+
 ## 0.11.1 — 26 November 2026
 
 - Recommend the Parallel app for everyday Search and Fetch in ChatGPT desktop.
