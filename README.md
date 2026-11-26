@@ -6,6 +6,8 @@ A portable research-routing skill for AI agents. It selects the smallest useful 
 
 The skill covers Octen, Keenable Search/Fetch, Exa Search/Agent/Connect, Perplexity, Parallel, and authenticated X interfaces. It works with any available subset, including one provider. Provider access, authentication, billing, and available operations depend on your environment.
 
+Start with a connected provider and a copyable prompt in the [research guide](https://goolamabbas.github.io/separate-intelligence-and-search/). Install this optional skill when your assistant supports skills and you want reusable guidance for selecting and using the research tools it can reach.
+
 ## Install
 
 ### Ask your coding agent
