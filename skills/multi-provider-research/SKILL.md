@@ -2,7 +2,7 @@
 name: multi-provider-research
 description: "Route research using Octen, Keenable, Exa, Perplexity, Parallel, or X-native tools. Use for research through a named provider, specialized datasets, batch enrichment, or source retrieval. Skip native-only research and tasks that merely mention a provider."
 metadata:
-  version: "0.11.2"
+  version: "0.11.3"
 ---
 
 # Multi-provider research
@@ -46,6 +46,8 @@ Retain asynchronous identifiers and follow the selected tool's lifecycle. Do not
 ## Evidence and completion
 
 Prefer original, official, regulatory, filing, repository, or primary-research evidence for material claims. Cite inspected source content or provider-backed results that directly support the claim and retain necessary context. Sufficient source excerpts or full text returned by search need no duplicate fetch. Retrieve more context when excerpts are ambiguous, incomplete, conflicting, or omit material qualifications. Generated answers are synthesis, not underlying source evidence; separate inference from source facts.
+
+When a tool turns the user’s list criteria into filters or screening questions, check whether it added or dropped a requirement. If the user asks for every qualifying match and an authoritative roster is available, check it for omissions before claiming complete coverage.
 
 For changing facts, inspect relevant cache/freshness controls and use an appropriate live fetch or cache age when supported. Distinguish retrieval time from publication, reporting-period, and observation dates. A successful fetch alone does not establish currentness. Preserve material speakers, timestamps, entities, and field-level provenance; report remaining uncertainty.
 

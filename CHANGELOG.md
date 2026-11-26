@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.11.3 — 26 November 2026
+
+- Check generated list filters against the requested criteria. When complete coverage matters, check an available authoritative roster for omissions.
+
 ## 0.11.2 — 26 November 2026
 
 - Clarify when to use Parallel FindAll to build a new list of entities alongside the guidance for discovering and querying a specific data source.
