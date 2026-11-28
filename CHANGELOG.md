@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.12.0 — 28 November 2026
+
+- Move maintainer behavioral evaluation fixtures out of the shipped skill package (`skills/multi-provider-research/references/behavioral-evaluations.md` -> `evals/behavioral-evaluations.md`) so they are excluded from the installable release ZIP.
+- Tighten `SKILL.md` and all provider references (~75% leaner packaged skill), adding clear positive task-to-provider routing and cutting dated probe logs and duplicated schema prose.
+- Update Keenable Fetch guidance from legacy `live: true` / indexed-only wording to `max_age_hours` (`0` live, `-1` index-only), automatic live fallback for unindexed URLs, `get_billing`, and Monitors tools.
+- Drop the hardcoded nine-operation cap in Octen routing so agents inspect the live schema (including Premier and Design search where exposed).
+- Update companion guide links in `README.md`.
+
 ## 0.11.3 — 26 November 2026
 
 - Check generated list filters against the requested criteria. When complete coverage matters, check an available authoritative roster for omissions.

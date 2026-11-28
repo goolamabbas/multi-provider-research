@@ -1,6 +1,6 @@
 # Multi-provider research
 
-Version **0.11.3** · [Changelog](CHANGELOG.md) · [Historical verification log](VERIFICATION.md)
+Version **0.12.0** · [Changelog](CHANGELOG.md) · [Maintainer evals](evals/behavioral-evaluations.md) · [Historical verification log](VERIFICATION.md)
 
 A portable research-routing skill for AI agents. It selects the smallest useful set of available research providers, respects provider and synthesis restrictions, verifies source evidence, and reports material gaps.
 
@@ -22,7 +22,7 @@ Inside a project, this defaults to installation for that project. Add “for all
 
 ### Manual installation
 
-1. Download [multi-provider-research-v0.11.3.zip](https://github.com/goolamabbas/multi-provider-research/releases/download/v0.11.3/multi-provider-research-v0.11.3.zip) from the [release](https://github.com/goolamabbas/multi-provider-research/releases/tag/v0.11.3). Download `SHA256SUMS` from the same release and verify the ZIP’s SHA-256 against its entry before extracting.
+1. Download [multi-provider-research-v0.12.0.zip](https://github.com/goolamabbas/multi-provider-research/releases/download/v0.12.0/multi-provider-research-v0.12.0.zip) from the [release](https://github.com/goolamabbas/multi-provider-research/releases/tag/v0.12.0). Download `SHA256SUMS` from the same release and verify the ZIP’s SHA-256 against its entry before extracting.
 2. Extract the ZIP. Its single top-level folder is `multi-provider-research/`, containing `SKILL.md`, `references/`, and `agents/`.
 3. Copy the entire folder into your application’s project skills directory for use in this project, or its personal skills directory for use across projects. Consult your application's current instructions for its skills directory and discovery behavior.
 4. Start a fresh task or reload skills as your application requires.
@@ -47,7 +47,7 @@ State any required or excluded providers and whether provider-generated analysis
 By default, ordinary lookups use source retrieval and analysis by the current assistant. Native search and page reading may help within your restrictions. If a required provider or reader is unavailable, the skill reports the gap and continues other permitted work; replacement requires an already-permitted fallback. For unrestricted tasks, it can choose another suitable tool and disclose the substitution.
 
 
-Exa Agent Ultra is an optional effort for comprehensive list-building and difficult multi-source research. The skill checks available budget controls, preserves run IDs, and distinguishes limited findings from exhaustive coverage. It does not make Ultra the default or claim independently measured superiority. See [when to use Ultra](https://goolamabbas.github.io/separate-intelligence-and-search/guide/choosing-providers/#when-agent-ultra-is-worth-it) and the [budgeted research example](https://goolamabbas.github.io/separate-intelligence-and-search/guide/research-prompts/#exa-agent-ultra-for-comprehensive-discovery).
+Exa Agent Ultra is an optional effort for comprehensive list-building and difficult multi-source research. The skill checks available budget controls, preserves run IDs, and distinguishes limited findings from exhaustive coverage. It does not make Ultra the default or claim independently measured superiority. See [when to use Ultra](https://goolamabbas.github.io/separate-intelligence-and-search/guide/choosing-providers/#when-agent-ultra-is-worth-it) and the [budgeted deep-investigation prompt](https://goolamabbas.github.io/separate-intelligence-and-search/guide/research-prompts/#run-a-deep-multi-source-investigation-with-a-budget-check).
 
 The skill supplies instructions. It does not install providers, supply API keys, enforce permissions, or guarantee that a named operation is available.
 
