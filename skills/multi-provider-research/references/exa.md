@@ -1,100 +1,25 @@
 # Exa
 
-Read for semantic discovery, specialized fields, or permitted Agent research. Library collections, API search categories and Connect providers are different surfaces.
+Use for semantic web discovery, structured company/people/paper/podcast records in Exa Library, or permitted Exa Agent and Connect workflows.
 
 ## Search and Fetch
 
-- Describe the source or record sought, the entity or topic, and the qualifying details that matter. For interviews, name the practitioner or creative challenge; for calls, the company and fiscal period; for companies, what they sell and to whom; for papers, the method or finding. Add dates only when relevant, without changing the user’s intent. Use regular Search for ordinary semantic discovery; use Advanced Search when its supported filters or content controls materially help.
-- Treat the tool interface and search mode as separate choices. Use `auto` as the general-purpose default. Select `lite` for cost- or latency-sensitive retrieval when cached content and its supported parameters suffice. Never invent a mode argument on a tool that does not expose one.
-- Lite does not fetch web pages live; this does not establish the refresh mechanism of every structured Library record. It rejects unsupported parameters, including `maxAgeHours`, `livecrawlTimeout`, text-match filters, and subpage options. Use Auto with supported freshness controls or a separate permitted Fetch when fresh content is required. Prefer Lite over legacy `fast` or `instant` for new requests where it fits; honor explicit user choices.
-- Do not rely on deprecated crawl-date or text-match filters merely because a connector still exposes them. `startCrawlDate` and `endCrawlDate` do not constrain retrieval. Use supported publication-date filters for publication dates, and content-freshness controls for page retrieval age. Inspect `warnings` and `notices`; do not claim a constraint was enforced when results report it was ignored or relaxed.
-- Use supported People, Company, News, Publication, or Financial Report categories when appropriate. Find code with a semantic query and suitable domain filters; do not rely on the deprecated `github` category. Search categories are distinct from Connect providers.
-- Reuse sufficient source highlights or text. Use Fetch for known URLs or missing context, except results documented as requiring search-time content (see Places below); inspect source dates and content before making freshness claims.
+- Write a descriptive query naming the ideal source type, entity, and qualifying details rather than terse keywords. Use regular Search by default; use Advanced Search only when explicit domain, date, category, or freshness controls matter.
+- **Auto vs. Lite:** `auto` is the default. Choose `lite` only when cost/latency matter and cached content suffices—Lite never fetches live and rejects freshness (`maxAgeHours`) and subpage parameters. Prefer `lite` over legacy `fast` / `instant`.
+- Ignore deprecated `startCrawlDate`, `endCrawlDate`, and `github` category even if still exposed; inspect returned `warnings` for ignored or relaxed filters.
+- **Built-in structured indexes (Search, no Agent needed):** Use `category:company` or `category:people` (or supported `company` / `people` / `news` / `publication` / `financial report` categories) for structured records in ordinary Search. Library fields are not equivalent to a named Connect partner's data; check dates and provenance.
+- **Podcast transcripts:** Ordinary Search/Fetch can retrieve indexed Library transcripts (`includeDomains: ["exa.ai/library/podcast"]` where supported; do not invent a `podcast` category). Library coverage is strongest on recent episodes, so a miss is not proof an episode doesn't exist. Preserve speaker, date, and timestamps.
+- **Places quirk:** Request content during Search where supported—Exa documents that later Fetch on Places records is unreliable.
+- Reuse sufficient Search highlights; call Fetch only for known URLs or missing context.
 
-### Library collections and content
+## Agent, Ultra, and Connect
 
-Library records are available through ordinary Search alongside web pages. A collection is not necessarily a category: do not invent categories for podcasts, places or other Library labels. Use supported categories or documented domain/path filters only when they help the task. Do not derive filters mechanically from collection landing URLs: SEC guidance uses `sec.gov`, while earnings-call guidance uses `exa.ai/library/markets/stocks`. Still verify entity, document type and fiscal period in the results.
+Treat `agent_run` (including Connect) as provider-side synthesis and usage-based billing.
 
-Search can return existing structured source fields without an Agent run. Inspect whether the current interface actually returns those fields; do not assume direct-API `entities` or content options are exposed by every connector. Preserve source provenance and distinguish returned values from inferred ones.
+- **Lifecycle:** Retain `runId` and resume active runs after timeouts; timeouts do not cancel provider work. Use `previousRunId` only to start a new billable follow-up from a completed run, with `input.data` for rows to enrich and `input.exclusion` for entities already found.
+- **Ultra effort:** Reserve `effort: "ultra"` for comprehensive list-building or hard multi-source research where completeness outweighs latency and cost. Inspect whether the live schema exposes budget/stop controls before starting—a dollar limit in prompt text is not an enforced cap (default Ultra cap is $20). Check `stopReason` separately from `status: completed` (`budget_reached` / `time_limit_reached` means partial coverage).
+- **Connect partners (inspect live `dataSources` enum before calling):**
+  - `fiber` (B2B firmographics/people), `similarweb` (web traffic/competitors), `financial_datasets` (US public-company financials/SEC), `baselayer` (US business verification/KYB), `particle` (podcast analytics/sentiment), `polymarket` (prediction-market odds/history), `affiliate` (product/merchant offers), `jinko` (travel/airfare).
+  - Verify completed output for actual partner contribution and provenance; never fill missing partner fields with generic web guesses.
 
-For Places, request text in the search call: Exa documents that later Fetch is unreliable. Places results appear automatically for relevant Auto/Lite queries, without an extra Places parameter. Use the interface's supported content control (the direct API uses `contents.text`); do not pass API fields to a connector that lacks them. If required content cannot be obtained through the permitted interface, disclose the gap. A listing of up to ten places is not an exhaustive inventory.
-
-For papers, distinguish abstracts from full text, which is available only where supplied. Product listing prices are not live; verify price and availability with the merchant when needed. For company profiles and financial records, retain field dates, reporting periods and original-source links where available.
-
-Official references: [Library](https://exa.ai/library), [Places](https://exa.ai/library/place), [SEC filings](https://exa.ai/library/sec-filing), [earnings calls](https://exa.ai/library/earnings-call), [papers](https://exa.ai/library/publication), [products](https://exa.ai/library/product).
-
-### Podcast transcripts
-
-Use ordinary Search and Fetch for podcast episode discovery, transcript summaries, and quotations. Where supported, restrict discovery with `includeDomains: ["exa.ai/library/podcast"]`; do not invent a podcast category. Preserve the episode date, speaker labels, timestamps, and supporting passage when available. The collection currently describes the 30 most recent episodes per show; check current coverage rather than assuming a complete archive. A missing result is not proof an interview does not exist. Check that a result is actually an interview when that format is requested, and retrieve surrounding context when highlights omit qualifications.
-
-Use Particle through Agent when additional analytics or structured provider fields materially add to the evidence, or when the user explicitly requires Particle. Respect synthesis restrictions and do not start an Agent run solely because the topic is podcasts.
-
-Official references: [Search modes and controls](https://exa.ai/docs/search/quickstart), [warnings and legacy parameters](https://exa.ai/docs/changelog), and [podcast retrieval](https://exa.ai/library/podcast).
-
-For flight status or airport boards, look for a structured result in ordinary Search. Specify airline, flight number, departure date and leg or airports as applicable. Confirm the matched leg and local times. Preserve scheduled, estimated and actual times separately and inspect freshness before making a status claim. For fare quotes, choose a suitable exposed offer lookup. [Exa Flights](https://exa.ai/blog/flights)
-
-For a quote or recent price history, check whether Search supplies the requested instrument, venue or quote currency, timestamp and fields. Retain their source and distinguish observable market data from inferred values. Consider Connect for partner-specific provenance or unresolved fields within the user's scope. [Financial Markets](https://exa.ai/docs/search/data/financial)
-
-### Library or Connect
-
-Choose by required fields, period, comparability, provenance and coverage, not topic alone. Use sufficient Library/search evidence when it meets the request. Select a matching partner directly when its distinct fields are required or explicitly requested; do not force a preliminary Search call. Structured records alone do not require Agent or Connect, and Library fields are not automatically equivalent to a named partner's data. Respect explicit provider and synthesis restrictions.
-
-## Agent and Connect
-
-Treat Agent as provider-side inference, including when a simple lookup uses Connect. Use it for multi-step research, enrichment, structured list-building, or a materially matched dataset when synthesis restrictions permit it.
-
-Inspect the current `dataSources` enum, select only providers needed for the requested fields, and name them in the query. Request those fields plus source, timestamp, or evidence fields in `outputSchema`. Match array limits to the requested scope; do not silently turn a comprehensive-list request into a small sample. Allow unknown fields rather than forcing unsupported values.
-
-Retain and resume the same run ID until a terminal state or genuine stopping condition. An interrupted call or polling timeout is not cancellation; do not start a duplicate while a run may still be active. `previousRunId` starts a new follow-up using a completed run as context; it is not how to poll an active run. Use `input.data` for rows to process or enrich and `input.exclusion` for entities already found when expanding a list. Further runs incur their own costs and must remain within the authorized scope and budget.
-
-Inspect the completed result for actual provider contribution, field provenance, errors, and partial coverage. Requested `dataSources` alone do not prove use. Separate provider-backed fields, Agent inference, and ordinary web evidence; label contribution unverified when it cannot be confirmed.
-
-### Effort and Agent Ultra
-
-Choose the smallest sufficient supported effort. Ultra is an optional Agent effort, not a separate provider or Connect dataset. Use it for large list-building, deep multi-source research, or hard-to-verify criteria when completeness matters more than latency or cost and provider-side synthesis is permitted. Ordinary lookups and supplied-page reading should stay on retrieval routes. A clearly suitable Ultra task does not require a preliminary lower-effort run.
-
-Inspect the callable effort enum, budget fields, and lifecycle controls. A connector may expose `effort: "ultra"` without exposing the direct API's budget or stop controls. Do not pass unsupported fields or describe a natural-language spending instruction as an enforced limit. If a required limit cannot be expressed, resolve the interface or budget boundary before starting; do not silently accept a higher default cap or switch interfaces. Existing sufficient authorization does not require another confirmation.
-
-Check current metered pricing, default run caps, supported budget ranges, duration limits, and any Connect charges before a material expenditure. A cap is not a fixed charge, and a duration ceiling may be soft. Prefer fixed effort when predictable per-request pricing meets the task. Provider estimates are not measured performance.
-
-Inspect `stopReason` separately from terminal status. `budget_reached`, `time_limit_reached`, or `stopped` returns what was found within that limit; qualify coverage accordingly. `schema_satisfied` reports task completion, not independent proof that every qualifying entity exists in the results. Report returned cost, effort, evidence gaps, and material limits; disclose unavailable usage metadata instead of substituting the cap for actual cost. Distinguish the provider's graceful stop operation, which retains findings, from cancellation, and use only exposed controls under the user's stopping instructions.
-
-Official references: [Ultra](https://exa.ai/docs/agent/agent-ultra.md), [Agent request and response schema](https://exa.ai/docs/reference/agent-api/create-a-run.md), and [pricing](https://exa.ai/docs/reference/pricing.md). Vendor benchmark claims do not establish superiority for the current task.
-
-## Connect provider map
-
-The provider IDs and field descriptions below are routing hints, not proof of current availability, access, or successful execution. Reinspect the live enum before use. Documented partners, including [additional partners](https://exa.ai/docs/reference/agent-api/connect/additional-partners), are not guaranteed account access.
-
-| Provider ID | Use when the requested evidence concerns | Prefer provider-backed fields such as |
-| --- | --- | --- |
-| `particle` | Podcasts, guests, hosts, spoken commentary, narrative or sentiment monitoring | show, episode, air date, speaker, speaker role, timestamp, transcript window, stance |
-| `fiber` | B2B companies, people, jobs, professional profiles, headcount, funding, or job-change signals | entity identity, domain, role, employer, employee count, funding stage, dated signal |
-| `financial_datasets` | U.S. public-company prices, fundamentals, statements, earnings, ownership, SEC filings, or screening | ticker, reporting date, price timestamp, metrics, filing form and date, direct filing link |
-| `similarweb` | Website traffic, rankings, engagement, digital footprint, or competitor discovery | domain, estimated visits, period, rank, engagement measure, competitor domain |
-| `baselayer` | U.S. business verification, registrations, entity structure, officers, KYB, or risk checks | legal name, jurisdiction, registration status, officers, verification status, risk result |
-| `affiliate` | Product discovery, merchant catalogs, prices, brands, or shopping comparisons | product, brand, price and currency, merchant, offer URL, observation time |
-| `jinko` | Travel destination discovery or live airfare comparisons | origin, destination, dates, cabin, fare and currency, itinerary, observation time |
-| `polymarket` | Prediction markets, market-implied probabilities, price history, order books, or public trader positions | market and event, outcome, implied probability, observation time, volume or liquidity, price history, market URL |
-
-Documentation:
-
-- Particle: https://exa.ai/docs/reference/agent-api/connect/particle
-- Fiber.ai: https://exa.ai/docs/reference/agent-api/connect/fiber
-- Financial Datasets: https://exa.ai/docs/reference/agent-api/connect/financialdatasets
-- Similarweb: https://exa.ai/docs/reference/agent-api/connect/similarweb
-- Baselayer: https://exa.ai/docs/reference/agent-api/connect/baselayer
-- Affiliate.com: https://exa.ai/docs/reference/agent-api/connect/affiliatecom
-- Jinko: https://exa.ai/docs/reference/agent-api/connect/jinko
-- Polymarket: https://exa.ai/docs/reference/agent-api/connect/polymarket
-
-## Matching examples
-
-Match the requested fields and coverage, not just the topic. Prefer a specialized dataset when it materially supplies the needed evidence; an authoritative supplied document may already satisfy a document-reading request. Explicit provider requirements and synthesis restrictions still apply.
-
-- A request about what podcast speakers said can use ordinary Search/Fetch transcripts. Check Particle when additional analytics or structured fields are needed, or the user explicitly requests it.
-- For company traffic estimates, compare the required metrics, periods, provenance and comparability with available evidence. Sufficient Library fields may answer a bounded request; select Similarweb when its particular data is needed or explicitly requested. Never label Library traffic as Similarweb data without evidence of that provenance.
-- For screening using comparable financial or ownership fields, check a matching Financial Datasets route when its coverage supplies the required evidence; select it directly if clearly needed or explicitly requested. Existing sufficient records need no enrichment. Reading one supplied official filing can be satisfied directly without an enrichment run. Never present ordinary web evidence as structured provider data.
-- A request for current prediction-market odds or their history should trigger a Polymarket availability check rather than treating commentary about the odds as market data.
-- A company research task may justify more than one provider only when the output requires distinct fields, such as Fiber firmographics plus Similarweb traffic. Avoid automatic multi-provider enrichment.
-
-Report requested versus confirmed providers, material field provenance and missing coverage, and exposed Agent model or preset metadata.
+Docs: [Exa MCP](https://exa.ai/docs/reference/exa-mcp) · [Search](https://exa.ai/docs/search/quickstart) · [Library](https://exa.ai/library) · [Agent](https://exa.ai/docs/agent/quickstart) · [Connect](https://exa.ai/docs/agent/connect/overview)

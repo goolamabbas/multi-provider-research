@@ -1,53 +1,27 @@
 # Keenable
 
-## Choose Keenable
+Use for high-recall general web discovery, relevant passages from long documents (Dynamic Snippets), date/point-in-time index queries, clean Markdown page reads, and optional authenticated Monitors.
 
-Use for general web discovery, query-relevant passages from long documents, publication/index-date filtering, or reading supplied and selected web pages. Benchmarks are dated evaluation evidence, not a universal routing rule. Do not replace explicitly required providers or materially matched specialist datasets merely because Keenable is available.
+## Privacy note
 
-The MCP normally exposes `search_web_pages` and `fetch_page_content`; SDK/API names and options differ. Inspect the callable schema. Some public MCP endpoints omit `mode`. Do not invent unsupported parameters, operator `_meta` overrides or experimental API tools.
+Keenable uses standard-tier search trajectories (queries, returned snippets, and fetched URLs) to improve retrieval. Keep queries to public facts unless the connection is on a zero-data-retention plan.
 
-Keep search queries and objectives to the public facts necessary for the lookup. Keenable describes using search trajectories to improve retrieval. Check the terms applicable to the connection before sending sensitive material. [Use of search trajectories](https://keenable.ai/blog/trajectories-in-improvements-out)
+## Search (`search_web_pages`)
 
-## Search and source boundaries
+- Describe the page and evidence sought rather than stuffing keywords. Reuse returned snippets when they already contain the facts and caveats.
+- **Modes:** Prefer `pro` for research depth when exposed; use `realtime` only when latency matters most (`realtime` does not guarantee fresher content). Public keyless endpoints (`/mcp-public`) may omit `mode`.
+- **Assistant-only synthesis:** Set `disable_cards: true` so Keenable returns ordinary web sources instead of provider-written cards (whose URLs expire after one day).
+- **Dates & point-in-time search:**
+  - `published_after` / `published_before` filter publication date (pages without a known date may be omitted).
+  - `acquired_after` / `acquired_before` filter when Keenable indexed the page.
+  - `query_time` searches the index *as it stood* at a past instant (`query_time: "7d"` means as of 7 days ago, not the last 7 days). For a past window, pair `query_time` with explicit dates because relative deltas still count back from now.
+- **Domains:** `site` targets one domain; `exclude_domains` excludes hosts and subdomains. Inspect live validation if excluding a public suffix like `.gov` (some MCP versions reject bare suffixes).
 
-Describe the page and evidence that would answer the question. Use a focused query; split genuinely independent aspects when necessary, with bounded concurrency and no duplicate reads. Start with a modest result count and adequate snippet context; expand for material evidence gaps, not provider coverage.
+## Fetch (`fetch_page_content`) and Monitors
 
-Use `pro` for ordinary depth-oriented research when selectable; choose `realtime` when latency is the priority. Inspect the returned mode when available because operator/account defaults can differ. Realtime does not guarantee fresher source content. Do not claim a requested mode executed when the interface cannot select or report it.
+- Returns clean Markdown for up to 20 URLs (keyless tier accepts 1 URL per call). By default returns Keenable's indexed copy and falls back to live fetch for unindexed URLs.
+- Use `max_age_hours: 0` when you need a guaranteed live read, or `-1` for strictly index-only reads. Check truncation against `max_chars` (default 20,000 total split across URLs).
+- Omit `prompt` for source-only reading; setting `prompt` runs an LLM over the page and returns an answer instead of source text.
+- Authenticated connections may also expose `get_billing` (read-only) and Monitors tools (`create_monitor`, `list_monitors`, `get_monitor_results`, `delete_monitor`). Create or delete monitors only with explicit user authorization.
 
-For source-only or assistant-only synthesis, set `disable_cards: true`. Keenable can otherwise return generated cards at `cards.keenable.ai/w/`; these are provider-written results with URLs documented to expire after one day. If cards are allowed, distinguish them from source pages and inspect underlying evidence for material claims. If a required control is unavailable, disclose the limitation rather than silently relaxing the user's boundary.
-
-Ordinary snippets select source passages using machine learning; they are not a guarantee of complete context. Reuse sufficient returned passages. Fetch when the URL was supplied, the user needs full-document analysis, or snippets omit qualifications, conflict, lack context or are stale. Do not automatically fetch every search result.
-
-`max_results` and `snippet_max_length` control results and characters per result, not a token budget. Documentation currently specifies 1–50 results and 180–10,000 snippet characters; live validation governs. Short caps can remove necessary evidence. Read `snippet`; the deprecated `description` field may be empty. Prefer JSON output when structured dates and returned mode matter.
-
-## Dates and domains
-
-Use `published_after` / `published_before` for publication windows. Publication filters omit records with unknown publication dates; preserve that coverage limitation. `acquired_after` / `acquired_before` concern when Keenable indexed a page, not when its underlying event occurred.
-
-Use `query_time` only for a point-in-time index query. `query_time: "7d"` means as of seven days ago, not the last seven days. For a past interval, use explicit dates/timestamps: relative filters still count back from request time. A date-only `query_time` resolves to midnight UTC; date-only ordinary before bounds cover the full UTC day. Do not promise historical page-body reconstruction from an ordinary Fetch or claim a complete record of what was publicly knowable.
-
-`site` restricts one site; supported query operators may target several. `exclude_domains` accepts a host and covers its subdomains. [Keenable documents](https://docs.keenable.ai/products/search) leading-dot public suffixes, but the MCP rejected `.gov` with `invalid_parameter` on 20 November 2026 and accepted `nasa.gov`. Paths, bare suffixes and host wildcards are unsupported. If the search itself must exclude an entire suffix and the runtime rejects it, use another permitted route that enforces the restriction or report the gap. A list of individual hosts cannot enforce a suffix-wide exclusion. If the restriction applies only to sources cited in the answer, check the returned URLs before citing them. Check results against actual user restrictions; a filter is not a source-quality guarantee.
-
-## Fetch
-
-Omit `prompt` for source-only work. With `prompt`, an LLM reads the page and returns its answer instead of full source text. Use that option only when the user's synthesis restrictions permit it, disclose provider-generated output and do not guess the model.
-
-MCP `fetch_page_content` is documented as indexed-only by default. Request `live: true` for unindexed URLs or current source content when supported. HTTP `/v1/fetch` documents automatic live fallback for unindexed URLs. Check the selected interface and report observed discrepancies. Preserve source and retrieval dates separately. Successful live fetching is not proof of completeness, truth or publication freshness.
-
-Check truncation against `max_chars` (documented default 20,000 for MCP and 50,000 for HTTP). This is a content cap, not query-targeted extraction. Retrieve enough context for the task or explicitly state what remains unread; do not call a truncated response the full document.
-
-## Cost, limits and completion
-
-Search and Fetch are separate operations. Check current account terms and exposed usage rather than assuming every connection is free. Authenticated MCP may return `_meta["keenable/usage"]` with SKU, credits and paid/free-allowance status; some harnesses do not expose it. Missing metadata is not proof of zero cost. Do not embed changing dollar prices in routing rules; link the official pricing and credit documentation.
-
-On rate limiting, follow exposed retry timing within the task's limits. On insufficient credits, stop repeated paid attempts and report the access gap; do not purchase credits or enable auto-top-up without authorization. Do not disable native tools or configure other clients as a side effect of research.
-
-An optional `session_id` groups calls in a run; it does not promise memory or deduplication. Report meaningful evidence contributions, failures, substitutions, truncation, generated output and freshness/cost limitations proportionally. Distinguish executed checks from documented features.
-
-## Official references
-
-- [Search and parameters](https://docs.keenable.ai/products/search)
-- [Fetch and prompted extraction](https://docs.keenable.ai/products/fetch)
-- [MCP endpoints, schemas and metadata](https://docs.keenable.ai/mcp-server)
-- [Best practices](https://docs.keenable.ai/best-practices)
-- [Pricing](https://keenable.ai/pricing), [credits](https://docs.keenable.ai/credits), [rate limits](https://docs.keenable.ai/rate-limits)
+Docs: [Keenable MCP](https://docs.keenable.ai/mcp-server) · [Pricing](https://keenable.ai/pricing) · [Search Trajectories](https://keenable.ai/blog/trajectories-in-improvements-out)

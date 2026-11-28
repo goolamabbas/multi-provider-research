@@ -1,16 +1,11 @@
 # Reporting checklist
 
-Use internally when coverage, provenance, provider-side synthesis, asynchronous work, or a requested audit warrants detail. Apply the shared evidence rules in SKILL.md and the selected provider reference's reporting guidance; do not load unrelated provider references to fill a ledger.
+Use only when coverage, provenance, asynchronous work, or an explicit audit warrants extra detail. Do not print an exhaustive ledger for ordinary lookups.
 
-Before reporting, check the material points:
+Check the material points before finalizing:
 
-- Claims have sufficient inspected source context or confirmed provider-backed evidence. Generated prose is distinguished from source facts and inference.
-- Source dates, cache behavior, speakers, timestamps, reporting periods, and field provenance support the requested interpretation and freshness, or gaps are disclosed.
-- Provider contribution is established by completed results, not configuration, documentation, requested data sources, or an available Agent surface.
-- Selected output options respect the synthesis boundary; exposed provider model or preset metadata is reported without guessing.
-- For Exa Agent, report material effort, returned cost and stop reason; distinguish budget/time-limited findings from coverage of the requested scope. A configured cap is not actual spend, and a completed status does not prove exhaustive coverage.
-- Failed calls, substitutions, incomplete fields, and pending asynchronous results are represented accurately. A progress URL does not mean the research is complete.
-
-Report exact tools and their distinct contributions. Include query transformations, filters, scope limits, identifiers, and other controls only when they affect interpretation, coverage, reproducibility, or a requested audit. A simple X lookup or two-provider task may need only a short note. Do not mechanically print every field or list unused capabilities.
-
-- For Keenable, report material returned mode, indexed/live retrieval, generated cards or prompted output, truncation and exposed usage. Missing billing metadata is not proof of zero cost.
+- **Primary evidence:** Important claims rest on inspected source content or confirmed provider-backed fields, keeping source facts separate from inference and provider-written prose.
+- **Freshness & provenance:** Publication, reporting-period, and retrieval dates fit the question; speakers, timestamps, or dataset provenance are preserved where relevant.
+- **Actual contribution:** Provider attribution reflects completed results (not mere configuration or requested `dataSources`).
+- **Synthesis & async runs:** Any provider-side synthesis names the operation and exposed preset/effort without guessing hidden models. For Exa Agent / Parallel Task runs, report returned cost, `stopReason` (noting partial coverage on budget/time caps), or pending handoff links accurately.
+- **Gaps & substitutions:** Failed reads, truncations, unavailable tools, and fallback substitutions are stated concisely.

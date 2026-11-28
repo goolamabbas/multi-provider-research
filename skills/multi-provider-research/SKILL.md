@@ -1,62 +1,44 @@
 ---
 name: multi-provider-research
-description: "Route research using Octen, Keenable, Exa, Perplexity, Parallel, or X-native tools. Use for research through a named provider, specialized datasets, batch enrichment, or source retrieval. Skip native-only research and tasks that merely mention a provider."
+description: "Route research using Exa, Parallel, Keenable, Octen, Perplexity, or X-native tools. Use for research through a named provider, specialized datasets, batch enrichment, or external source retrieval. Skip native-only research and tasks that merely mention a provider."
 metadata:
-  version: "0.11.3"
+  version: "0.12.0"
 ---
 
 # Multi-provider research
 
-This skill maintains routing for Octen, Keenable, Exa, Perplexity, Parallel and authenticated X interfaces. For other providers, use their own instructions when explicitly requested; do not automatically add them through this skill.
+Maintained routing for Exa, Parallel, Keenable, Octen, Perplexity, and authenticated X interfaces. Works with any available subset, including a single provider. For providers outside this set, follow their own instructions when explicitly requested rather than substituting a maintained provider.
 
-Use the minimum sufficient set of available providers. Give each a distinct evidence role within the user's requested outcome; a single provider can be enough.
+Use the smallest sufficient set of available providers. Give each a distinct role; one provider is often enough.
 
-## Shared boundaries
+## Choose by evidence need
 
-- Apply explicit provider inclusions or exclusions, then named-provider requests, then a materially matched specialized dataset, then a generic discovery default. Naming a provider requires its contribution to the requested role, not exclusivity. Honor “only,” “exactly,” and equivalent restrictions. Explicit native-only instructions override external routing even if this skill was loaded automatically.
-- Native search and page reading are allowed when useful and not excluded by the user. They must not bypass a required provider, an exclusive tool set, or a specialized evidence requirement. “Only Exa Search and Fetch” excludes native tools; “Exa as the only external discovery provider” permits native page reading, but not native discovery. Reuse sufficient source content instead of opening it again solely to verify a citation.
-- Default ordinary lookups to retrieval and synthesis by the current assistant. Use provider-generated research or enrichment when the requested outcome warrants it and restrictions permit it. Ask only when an unresolved boundary materially affects scope, cost, or data handling; existing authorization continues to apply.
-- Classify operations and output options, not just tool names. Under assistant-only synthesis, avoid provider-generated answers, summaries, reasoning, and agent operations, including Octen News storylines, Keenable generated cards and prompted Fetch, Connect through Exa Agent and Parallel web_research, Decisions and Task workflows. Disable generated output enabled by default using supported controls; report unavailable controls and use another permitted source-content operation when sufficient. Source retrieval, ranking, and faithful extraction may use internal machine learning; this restriction does not guarantee model-free processing. A provider call does not imply use of the assistant's selected model.
-- Research is read-only unless the user explicitly authorizes the corresponding action. Persistent website actions and recurring checks require authorization for those outcomes. Provider installation or availability alone is not authorization.
+Read only the provider references relevant to the task and active connections.
 
-## Choose and execute
+| Evidence need | Best fit when connected | Reference |
+| --- | --- | --- |
+| Semantic discovery, company/people profiles, papers, podcast transcripts, or Connect partner datasets | **Exa** | [references/exa.md](references/exa.md) |
+| Primary financial/legal/healthcare excerpts, PDF or JS-heavy page fetch, structured registries, or batch list enrichment | **Parallel** | [references/parallel.md](references/parallel.md) |
+| High-recall general web passages, date windows, point-in-time index search (`query_time`), or web monitors | **Keenable** | [references/keenable.md](references/keenable.md) |
+| Fast official-URL lookup (`Pulse`), broad multi-angle discovery, current news, local places, business cards, or image search | **Octen** | [references/octen.md](references/octen.md) |
+| Fast ranked search, archived URL snapshots (`Context`), or permitted cited synthesis (`Ask` / `Reason` / `Research`) | **Perplexity** | [references/perplexity.md](references/perplexity.md) |
+| Original X posts, threads, X Articles, trends, counts, or saved bookmarks | **Authenticated X** | [references/x-routing.md](references/x-routing.md) |
 
-Read only the references relevant to the requested evidence and selected providers. Decompose multi-part work when useful; a focused lookup needs no elaborate routing plan.
+## Routing boundaries and defaults
 
-| Evidence need or required provider | Reference |
-| --- | --- |
-| Destination URLs, web/news, company/person profiles, places, task-relevant media, or page reading with Octen | [Octen](references/octen.md) |
-| Semantic discovery, Library collections and structured source records, search categories, or Exa Agent research and enrichment, including optional Ultra effort | [Exa](references/exa.md) |
-| Specialized or comparable fields across entities, dated records, or structured datasets | [Octen business/place records](references/octen.md), [Exa Library and Connect selection](references/exa.md#library-or-connect), [Parallel specialized sources](references/parallel.md), according to required fields, provenance, coverage and cost; sufficient search or supplied records may already satisfy the task |
-| General web discovery, query-relevant snippets, publication/index-date controls, or page retrieval with Keenable | [Keenable](references/keenable.md) |
-| Perplexity Search, known-URL reading with Context, or permitted cited analysis | [Perplexity](references/perplexity.md) |
-| Parallel web evidence, image discovery, flight fares, product offers, specialized records or permitted research and batch enrichment | [Parallel](references/parallel.md) |
-| X posts, Articles, accounts, timelines, bookmarks, engagement, search, counts, or trends | [X-native routing](references/x-routing.md) |
+- **Precedence:** Explicit user inclusions/exclusions and native-only instructions always win (even if this skill loaded automatically). Naming a provider requires its contribution to that role; `"only"` or `"exactly"` makes the permitted set exclusive.
+- **Native tools:** Allowed when useful and not excluded, but never use native search/fetch to bypass a required provider, exclusive list, or X-native requirement.
+- **Retrieval first, synthesis deliberately:** Default ordinary lookups to source retrieval (search and fetch) and let the current assistant write the answer. Use provider-generated research or paid enrichment (Exa Agent/Connect, Parallel `web_research`/Deep Research/`FindAll`, Perplexity Ask/Reason/Research) only when the task genuinely needs it and restrictions/budget permit.
+- **Strict assistant-only synthesis (when requested):** Exclude provider answer/agent endpoints and disable default generated output (Octen News storylines, Keenable generated cards and prompted Fetch, Perplexity `criteria` scoring). Never imply provider-generated prose came from the current assistant's model.
+- **Live schema governs:** Inspect callable tool schemas before first use; never invent parameters from direct-API docs. Do not run a separate probe call solely to test access when the first useful lookup establishes it.
+- **Avoid duplicate work and duplicate paid runs:** Do not repeat the same query or fetch the same URL across providers unless cross-coverage or conflict verification warrants it. For asynchronous runs (Exa Agent, Parallel Task/`FindAll`), retain and resume the same run ID instead of launching duplicates.
+- **Fallbacks:** If a required provider is unavailable, report the gap without silent substitution and finish independent permitted work. For unrestricted tasks, switch to another suitable permitted provider and note the substitution briefly.
+- **Read-only by default:** Never post, reply, create recurring monitors, purchase credits, or change client configuration without explicit authorization.
 
-Inspect the selected operation's callable schema before first use; reuse that knowledge unless the surface changes or validation fails. Distinguish visibility/configuration, authentication/reachability, successful execution, and useful evidence. The first useful read can establish live usability; do not make a separate probe solely to demonstrate availability. Runtime validation governs accepted arguments when descriptions disagree; report material mismatches.
+## Evidence and reporting
 
-Avoid repeating successful queries or fetching the same URL across providers without a requested comparison or material verification reason.
-
-Default fallback policy: if a required provider or reader is unavailable, report the gap and do not replace it unless the user has already permitted a fallback. Complete other permitted parts of the task. For unrestricted tasks, choose another suitable permitted tool when needed; disclose substitutions and any loss of coverage. A fallback must preserve provider, synthesis, scope, and budget restrictions. Label its evidence class accurately: web evidence is not Connect-backed or X-native evidence. Ask only when a necessary fallback needs permission the user has not already given.
-
-A catalog match is a candidate, not an instruction to buy data. Reuse sufficient search or page evidence; do not add paid enrichment solely because it is available. For a remaining structured-data need, compare field coverage, provenance, freshness, and published cost within the user's scope and budget.
-
-Retain asynchronous identifiers and follow the selected tool's lifecycle. Do not duplicate a run that may still be active. A provider-specific instruction to return a progress URL is a pending handoff, not completed research.
-
-## Evidence and completion
-
-Prefer original, official, regulatory, filing, repository, or primary-research evidence for material claims. Cite inspected source content or provider-backed results that directly support the claim and retain necessary context. Sufficient source excerpts or full text returned by search need no duplicate fetch. Retrieve more context when excerpts are ambiguous, incomplete, conflicting, or omit material qualifications. Generated answers are synthesis, not underlying source evidence; separate inference from source facts.
-
-When a tool turns the user’s list criteria into filters or screening questions, check whether it added or dropped a requirement. If the user asks for every qualifying match and an authoritative roster is available, check it for omissions before claiming complete coverage.
-
-For changing facts, inspect relevant cache/freshness controls and use an appropriate live fetch or cache age when supported. Distinguish retrieval time from publication, reporting-period, and observation dates. A successful fetch alone does not establish currentness. Preserve material speakers, timestamps, entities, and field-level provenance; report remaining uncertainty.
-
-Public professional fields may be collected when requested. Do not seek private contact details, sensitive personal attributes, or data-broker-style enrichment.
-
-Continue permitted research until the requested deliverable has sufficient inspected evidence, or remaining gaps are blocked by access, explicit restrictions, budget, or the tool's lifecycle. Pursue material gaps without repeating successful work. If one evidence lane is blocked, complete independent permitted work and report the limitation.
-
-Report exact tools, distinct contributions, material failures, substitutions, and gaps proportionally. Identify provider-side synthesis and its exposed model or preset without guessing. A short provider note can suffice for a simple lookup. Use [the reporting checklist](references/reporting-checklist.md) when coverage, provenance, asynchronous work, or an audit warrants more detail; do not print an exhaustive ledger by default.
-
-## Maintenance
-
-When changing routing behavior, use [behavioral evaluations](references/behavioral-evaluations.md). These are maintenance cases, not steps to run during ordinary research.
+- Prefer primary and official sources (filings, official docs, original transcripts, repositories). Reuse returned excerpts when they already contain the needed facts and caveats; fetch full pages when context is truncated, ambiguous, or conflicting.
+- For changing facts, check freshness/cache controls and keep publication, reporting-period, and retrieval dates distinct.
+- When a tool translates list criteria into filters, verify it did not add or drop a constraint.
+- Collect public professional fields when requested; do not seek private contact details or sensitive personal data.
+- Keep reporting proportional: cite primary links and note real gaps or tool limits concisely. Do not bury simple answers in mechanical ledgers; consult [references/reporting-checklist.md](references/reporting-checklist.md) only when provenance, async runs, or an audit requires detail.
